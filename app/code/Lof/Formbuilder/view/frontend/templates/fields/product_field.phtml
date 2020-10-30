@@ -1,0 +1,51 @@
+<?php
+$helper            = $this->helper("Lof\Formbuilder\Helper\Fields");
+$dataHelper       = $this->helper("Lof\Formbuilder\Helper\Data");
+$form              = $block->getForm();
+$form_data         = $this->getData('form_data');
+$field             = $this->getData('field_data');
+$field_type        = $field['field_type'];
+$label             = $block->filterMessage($field['label']);
+$label 			   = trim($label);
+$product_sku       = isset($field['product_sku'])?trim($field['product_sku']):'';
+$label 			   = $label?$label:$product_sku;
+$options           = $field['field_options'];
+$inlineCss         = isset($field['inline_css'])?$field['inline_css']:'';
+$is_checked        = isset($options['is_checked'])?(int)$options['is_checked']:0;
+$cid              = $dataHelper->getFieldId($field);
+$field_name        = $helper->getFieldPrefix() . $cid . $form->getId();
+$field_id          = $field_name.uniqid();
+$available_fields  = $helper->getAvailableFields();
+$html              = '';
+$field_validate    = isset($available_fields[$field_type])?$available_fields[$field_type]:'';
+$validates         = $field_validate;
+$field_help        = isset($options['description'])?$block->filterMessage($options['description']):'';
+
+$color_label       = isset($options['color_label'])?'color:'.$options['color_label'].';':'';
+$font_size         = isset($options['font_size'])?'font-size:'.(int)$options['font_size'].'px;':'';
+$font_style        = isset($options['font_style'])?'font-style:'.$options['font_style'].';':'';
+$font_weight       = isset($options['font_weight'])?'font-weight:'.$options['font_weight'].';':'';
+
+if($field_validate && is_array($field_validate)) {
+	$validates = implode(" ", $field_validate);
+}
+$include_other_option = isset($options['include_other_option'])?$options['include_other_option']:0;
+
+$gridColumn = isset($field['grid_column'])?(int)$field['grid_column']:1;
+$gridColumn = $gridColumn > 0?$gridColumn:1;
+$x          = 0;
+$item_label_value = $block->escapeQuote($product_sku);
+$item_checked = $is_checked;
+if($form_data && isset($form_data[$field_name]) && $form_data[$field_name] == $item_label_value) {
+	$item_checked = true;
+}
+?>
+<?php if( $gridColumn == 1 || $x%$gridColumn == 0){ ?>
+<div class="row">
+<?php } ?>
+	<div class="col-lg-<?php echo 12/$gridColumn ?>">
+		<input type="checkbox" name="<?php echo $field_name; ?>" id="<?php echo $field_id; ?>" value="<?php echo $item_label_value; ?>" class="<?php echo $validates; ?>" <?php echo ($item_checked)?'checked="checked"':''?>/> <label for="<?php echo $field_id; ?>" style="<?php echo $font_size.$font_style.$font_weight.$color_label; ?>"><?php echo $block->filterMessage($label); ?></label>
+	</div>
+<?php if( $gridColumn == 1 || $x%$gridColumn == 0){ ?>
+</div>
+<?php } ?>

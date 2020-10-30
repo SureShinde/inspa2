@@ -1,0 +1,75 @@
+<?php
+/**
+ * Landofcoder
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Landofcoder EULA that is bundled with
+ * this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.landofcoder.com/LICENSE-1.0.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade the extension
+ * to newer versions in the future. If you wish to customize the extension
+ * for your needs please refer to http://www.landofcoder.com/ for more information
+ *
+ * @category   Lof
+ * @package    Lof_FollowUpEmail
+ * @copyright  Copyright (c) 2016 Landofcoder (http://www.landofcoder.com/)
+ * @license    http://www.landofcoder.com/LICENSE-1.0.html
+ */
+
+/**
+ * Form Builder extension
+ *
+ * @category   Lof
+ * @package    Lof_FollowUpEmail
+ * @author     Landofcoder Dev Team <landofcoder@gmail.com>
+ */
+
+$jsonHelper = $this->helper('Magento\Framework\Json\Helper\Data');
+?>
+
+<script>
+    require([
+        'jquery',
+        'Magento_Ui/js/modal/alert'
+    ], function ($, alert) {
+        window.SmsNotificationSmsDebugTest = function(){
+            
+            $.ajax({
+                url: '<?php echo $block->getAdminUrl() ?>',
+                type: 'post',
+                dataType: 'html',
+                data: {
+                    form_key: FORM_KEY,
+                    type_sms: $('#lofsmsnotification_sms_settings_type_sms').val(),
+                    username: $('#lofsmsnotification_sms_settings_username').val(),
+                    password: $('#lofsmsnotification_sms_settings_password').val(),
+                    messagebird_username: $('#lofsmsnotification_sms_settings_messagebird_username').val(),
+                    messagebird_password: $('#lofsmsnotification_sms_settings_messagebird_password').val(),
+                    messagebird_key: $('#lofsmsnotification_sms_settings_messagebird_key').val(),
+                    india_username: $('#lofsmsnotification_sms_settings_india_username').val(),
+                    india_password: $('#lofsmsnotification_sms_settings_india_password').val(),
+                    qpassword: $('#lofsmsnotification_sms_settings_qpassword').val(),
+                    sid: $('#lofsmsnotification_sms_settings_sid').val(),
+                    phone: $('#lofsmsnotification_sms_settings_phone_test').val(),
+                    token:$('#lofsmsnotification_sms_settings_token').val(),
+                    outreach_id:$('#lofsmsnotification_sms_settings_outreach_id').val(),
+                    outreach_pass:$('#lofsmsnotification_sms_settings_outreach_pass').val(),
+                    outreach_lang:$('#lofsmsnotification_sms_settings_outreach_lang').val()
+                },
+                showLoader: true
+            }).done(function(data) {
+                alert({
+                    title:'Result',
+                    content:data
+                });
+            });
+        }
+    });
+</script>
+
+<?php echo $block->getButtonHtml() ?>

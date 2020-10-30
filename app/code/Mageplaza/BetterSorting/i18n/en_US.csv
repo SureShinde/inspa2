@@ -1,0 +1,38 @@
+"This sorting option is not enabled","This sorting option is not enabled"
+"Category Page","Category Page"
+"Search Page","Search Page"
+Amount,Amount
+Percent,Percent
+"Product Name","Product Name"
+Ascending,Ascending
+Descending,Descending
+"Base on qty (<1)","Base on qty (<1)"
+No,No
+"Base on stock label","Base on stock label"
+"Better Sorting","Better Sorting"
+"General Configuration","General Configuration"
+Enable,Enable
+"Select <strong>Yes</strong> to enable this module","Select <strong>Yes</strong> to enable this module"
+"Show Out of Stock at the End","Show Out of Stock at the End"
+"<strong>Inventory / Stock Options / Display Out of Stock Products</strong> must be enabled","<strong>Inventory / Stock Options / Display Out of Stock Products</strong> must be enabled"
+"Default Sort by on Search Page","Default Sort by on Search Page"
+Discount,Discount
+Label,Label
+"Base On","Base On"
+"Apply On","Apply On"
+"Default Sort Direction","Default Sort Direction"
+"Sort Order","Sort Order"
+Bestseller,Bestseller
+"Time base (days)","Time base (days)"
+"If empty, the default time base will be all-time","If empty, the default time base will be all-time"
+"Most Viewed","Most Viewed"
+"Top rated","Top rated"
+"Reviews Count","Reviews Count"
+"New Arrivals","New Arrivals"
+"Stock Quantity","Stock Quantity"
+"Wish List","Wish List"
+Price,Price
+Position,Position
+"Only Apply For Category Page/Cannot Be Disabled","Only Apply For Category Page/Cannot Be Disabled"
+Relevance,Relevance
+"Only Apply For Search Page/Cannot Be Disabled","Only Apply For Search Page/Cannot Be Disabled"

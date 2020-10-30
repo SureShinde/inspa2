@@ -1,0 +1,46 @@
+
+<?php
+$recommendations = $block->getAppointments(); ?>
+<?php if ($recommendations && count($recommendations)): ?>
+<div class="table-wrapper query-history">
+    <h1 class="table-title"><?= /* @escapeNotVerified */ __('Appointments') ?></h1>
+    <h5 class="desktop-hide">Appointment Details</h5>
+    <table class="data table table-query-items history" id="my-query-table">
+        <caption class="table-caption"><?= /* @escapeNotVerified */ __('Query') ?></caption>
+        <thead class="table-head">
+        <tr>
+            <th scope="col" class="col date"><?= /* @escapeNotVerified */ __('Date / time') ?></th>
+            <th scope="col" class="col service"><?= /* @escapeNotVerified */ __('Service') ?></th>
+            <th scope="col" class="col technition"><?= /* @escapeNotVerified */ __('Technition') ?></th>
+            <th scope="col" class="col location"><?= /* @escapeNotVerified */ __('Location') ?></th>
+        </tr>
+        </thead>
+        <tbody class="tr-color">
+
+        <?php  foreach ($recommendations as $key =>  $recommendation) :?>
+        <?php
+            $services = $recommendations[$key]->appointment_services;?>
+            <?php $time =  $services[0]->start_time . ' - ' . $services[0]->end_time;?>
+           <?php   $appointmentTime =  str_replace("T"," ",$time );?>
+            <tr>
+            <td> <?php echo $appointmentTime; ?></td>
+
+            <td><?php echo $services[0]->service->name;
+             ?></td>
+            <?php $technition = $block->getTechnition(); ?>
+            <td><?php  echo $technition; ?></td>
+            <?php $center = $block->getCenter(); ?>
+            <td><?php echo $center['address_1'] . ', ' . $center['city']?></td>
+        </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+<!--    --><?php //if ($block->getPagerHtml()): ?>
+<!--        <div class="order-products-toolbar toolbar bottom">--><?php //echo $block->getPagerHtml(); ?><!--</div>-->
+<!--    --><?php //endif ?>
+</div>
+<?php else: ?>
+    <div class="message info empty"><span><?= /* @escapeNotVerified */ __('You have no Appointments to show.') ?></span></div>
+<?php endif ?>
+<!--    --><?php //$recommend = $block->RegisterUser(); ?>
+

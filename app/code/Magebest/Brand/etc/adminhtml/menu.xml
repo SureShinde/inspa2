@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magebest
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Magebest.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.magebest.com/LICENSE.txt
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category   Magebest
+ * @package    Magebest_Brand
+ * @copyright  Copyright (c) 2014 Magebest (https://www.magebest.com/)
+ * @license    https://www.magebest.com/LICENSE.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+	<menu>
+        <add id="Magebest_Brand::main_menu" title="Shop By Brand" module="Magebest_Brand" sortOrder="20" resource="Magebest_Brand::main_menu" />
+		<add id="Magebest_Brand::brand" title="Brand" module="Magebest_Brand" sortOrder="40" resource="Magebest_Brand::brand" parent="Magebest_Brand::main_menu"/>
+		<add id="Magebest_Brand::brand_new" title="Add New Brand" module="Magebest_Brand" sortOrder="10" parent="Magebest_Brand::brand" action="magebestbrand/brand/new" resource="Magebest_Brand::brand"/>
+		<add id="Magebest_Brand::brand_manage" title="Manage Brands" module="Magebest_Brand" sortOrder="20" parent="Magebest_Brand::brand" action="magebestbrand/brand/index" resource="Magebest_Brand::brand"/>
+		<add id="Magebest_Brand::brand_group_manage" title="Manage Groups" module="Magebest_Brand" sortOrder="40" parent="Magebest_Brand::brand" action="magebestbrand/group/index" resource="Magebest_Brand::group"/>
+		<add id="Magebest_Brand::import" title="Import Brands Products" module="Magebest_Brand" sortOrder="45" parent="Magebest_Brand::brand" action="magebestbrand/import/index" resource="Magebest_Brand::import"/>
+        <add id="Magebest_Brand::configuration" title="Settings" module="Magebest_Brand" sortOrder="50" parent="Magebest_Brand::brand" action="adminhtml/system_config/edit/section/magebestbrand" resource="Magebest_Brand::config_brand"/>
+	</menu>
+</config>

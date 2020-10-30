@@ -1,0 +1,301 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/system_file.xsd">
+    <system>
+        <tab id="landofcoder" translate="label" sortOrder="400">
+			<label><![CDATA[<a href="http://landofcoder.com" target="_BLANK" title=""Magento Marketplace, Opencart Marketplace, Magento 2 Extension, Free Magento Extension, Opencart Advanced Reports">landofcoder.com</a>]]></label>
+		</tab>
+        <section id="lofsmsnotification" translate="label" sortOrder="130"  type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+			 <tab>landofcoder</tab>
+             <label>SMS Notification</label>
+          	 <resource>Lof_SmsNotification::config</resource>
+			 <group id="general_settings" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="enable_module" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Module</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="sms_settings" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Sms Settings</label>
+                <field id="type_sms" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Type Sms</label>
+                    <source_model>Lof\SmsNotification\Model\Config\Source\TypeSms</source_model>
+                </field>
+                 <field id="sid" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Account SID</label>
+                    <comment><![CDATA[Registter at https://www.twilio.com/]]></comment>
+                    <depends>
+                        <field id="*/*/type_sms">twilio</field>
+                    </depends>
+                </field>
+                <field id="token" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Token</label>
+                    <depends>
+                        <field id="*/*/type_sms">twilio</field>
+                    </depends>
+                </field> 
+                 <field id="username" translate="label" type="text" sortOrder="21" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>User Name</label>
+                    <comment><![CDATA[Registter at https://www.bulksms.com/]]></comment>
+                    <depends>
+                        <field id="*/*/type_sms">bulksms</field>
+                    </depends>
+                </field>
+                 <field id="password" translate="label" type="password" sortOrder="22" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Password</label>
+                    <depends>
+                        <field id="*/*/type_sms">bulksms</field>
+                    </depends>
+                </field>
+                <field id="messagebird_username" translate="label" type="text" sortOrder="23" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>User Name</label>
+                    <comment><![CDATA[Registter at https://www.messagebird.com/]]></comment>
+                    <depends>
+                        <field id="*/*/type_sms">messagebird</field>
+                    </depends>
+                </field>
+                 <field id="messagebird_password" translate="label" type="password" sortOrder="24" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Password</label>
+                    <depends>
+                        <field id="*/*/type_sms">messagebird</field>
+                    </depends>
+                </field>
+                <field id="messagebird_key" translate="label" type="text" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Access Key</label>
+                    <depends>
+                        <field id="*/*/type_sms">messagebird</field>
+                    </depends>
+                </field>
+                <field id="msg91_authkey" translate="label" type="password" sortOrder="26" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Auth Key</label>
+                    <depends>
+                        <field id="*/*/type_sms">msg91</field>
+                    </depends>
+                </field>
+               
+                 <field id="qpassword" translate="label" type="password" sortOrder="27" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Authentication password</label>
+                    <depends>
+                        <field id="*/*/type_sms">dialog</field>
+                    </depends>
+                </field>
+                 <field id="india_username" translate="label" type="text" sortOrder="28" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>User Name</label>
+                    <comment><![CDATA[Registter at https://www.smsindiahub.in/]]></comment>
+                    <depends>
+                        <field id="*/*/type_sms">smsindiahub</field>
+                    </depends>
+                </field>
+                 <field id="india_password" translate="label" type="password" sortOrder="29" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Password</label>
+                    <depends>
+                        <field id="*/*/type_sms">smsindiahub</field>
+                    </depends>
+                </field>
+                 <field id="outreach_id" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Account Id</label>
+                    <comment><![CDATA[Registter at http://www.outreach.pk/]]></comment>
+                    <depends>
+                        <field id="*/*/type_sms">outreach</field>
+                    </depends>
+                </field>
+                <field id="outreach_pass" translate="label" type="password" sortOrder="31" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Account Password</label>
+                    <depends>
+                        <field id="*/*/type_sms">outreach</field>
+                    </depends>
+                </field>
+                 <field id="outreach_lang" translate="label" type="select" sortOrder="32" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Language</label>
+                    <source_model>Lof\SmsNotification\Model\Config\Source\Language</source_model>
+                    <depends>
+                        <field id="*/*/type_sms">outreach</field>
+                    </depends>
+                </field>
+                 <field id="phone" translate="label" type="text" sortOrder="440" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Mobile Number</label>
+                    <comment><![CDATA[Number phone send.]]></comment>
+                </field> 
+                 <field id="phone_test" translate="label" type="text" sortOrder="450" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Phone Test</label>
+                    <comment><![CDATA[Number phone to send test to.]]></comment>
+                </field> 
+                <field id="button" translate="label comment" type="button" sortOrder="460" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label></label>
+                    <frontend_model>Lof\SmsNotification\Block\Adminhtml\System\Config\TestButton</frontend_model>
+                </field>  
+            </group>
+			<group id="sms_customer" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+			 	<label>Send sms to customer</label>
+
+			 	<field id="sms_register_customer_heading" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Registers a new account</label>
+					<frontend_model>Lof\SmsNotification\Block\Adminhtml\System\Config\Form\Field\Heading</frontend_model>
+				</field>
+				<field id="enable_sms_register_customer" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enable</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="message_sms_register_customer" translate="label comment" type="textarea" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Message</label>
+					<comment><![CDATA[{{first_name}},{{last_name}},{{email}},{{shop_name}}, {{mobilenumber}},{{shop_url}}]]></comment>
+				</field>
+
+				<field id="sms_new_order_heading" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Places a new order</label>
+					<frontend_model>Lof\SmsNotification\Block\Adminhtml\System\Config\Form\Field\Heading</frontend_model>
+				</field>
+				<field id="enable_sms_new_order" translate="label comment" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enable</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="message_sms_new_order" translate="label comment" type="textarea" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Message</label>
+					<comment><![CDATA[{{order_id}},{{mobilenumber}},{{order_total}}, {{first_name}},{{last_name}},{{customer_email}},{{shop_name}}]]></comment>
+				</field>
+				<!-- 
+				<field id="sms_order_status_heading" translate="label comment" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Order status is changed</label>
+					<frontend_model>Lof\SmsNotification\Block\Adminhtml\System\Config\Form\Field\Heading</frontend_model>
+				</field>
+				<field id="enable_order_status" translate="label comment" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enable</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="message_order_status" translate="label comment" type="textarea" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Message</label>
+					<comment><![CDATA[{{order_id}},{{mobilenumber}},{{order_total}}, {{first_name}},{{last_name}},{{customer_email}},{{shop_name}}]]></comment>
+				</field> -->
+
+				<field id="sms_new_invoice_heading" translate="label comment" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>New invoice is created</label>
+					<frontend_model>Lof\SmsNotification\Block\Adminhtml\System\Config\Form\Field\Heading</frontend_model>
+				</field>
+				<field id="enable_new_invoice" translate="label comment" type="select" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enable</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="message_new_invoice" translate="label comment" type="textarea" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Message</label>
+					<comment><![CDATA[{{created_at}},{{order_total}},{{order_id}}, {{order_old_status}},{{order_new_status}}, {{store_name}},{{first_name}},{{last_name}}]]></comment>
+				</field>
+
+				<field id="sms_new_shipment_heading" translate="label comment" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>New shipment is created</label>
+					<frontend_model>Lof\SmsNotification\Block\Adminhtml\System\Config\Form\Field\Heading</frontend_model>
+				</field>
+				<field id="enable_new_shipment" translate="label comment" type="select" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enable</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="message_new_shipment" translate="label comment" type="textarea" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Message</label>
+					<comment><![CDATA[{{order_created_at}},{{shipment_created_at}},{{order_total}},{{order_email}},{{order_id}},{{order_old_status}},{{order_new_status}},{{store_name}},{{user_mobilenumber}},{{first_name}},{{last_name}}]]></comment>
+				</field>
+
+				<field id="sms_new_credit_memo_heading" translate="label comment" type="text" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>New Credit Memo is created</label>
+					<frontend_model>Lof\SmsNotification\Block\Adminhtml\System\Config\Form\Field\Heading</frontend_model>
+				</field>
+				<field id="enable_new_credit_memo" translate="label comment" type="select" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enable</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="message_new_credit_memo" translate="label comment" type="textarea" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Message</label>
+					<comment><![CDATA[{{created_at}},{{order_total}},{{order_id}}, {{order_old_status}},{{order_new_status}},{{store_name}}]]></comment>
+				</field>
+			</group>
+			<group id="sms_admin" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+			 	<label>Send sms to admin</label>
+
+			 	<field id="sms_register_customer_heading" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Registers a new account</label>
+					<frontend_model>Lof\SmsNotification\Block\Adminhtml\System\Config\Form\Field\Heading</frontend_model>
+				</field>
+				<field id="enable_sms_register_customer" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enable</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="message_sms_register_customer" translate="label comment" type="textarea" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Message</label>
+					<comment><![CDATA[{{first_name}},{{last_name}},{{email}},{{shop_name}},{{mobilenumber}},{{otp_string}},{{shop_url}}]]></comment>
+				</field>
+
+				<field id="sms_new_order_heading" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Places a new order</label>
+					<frontend_model>Lof\SmsNotification\Block\Adminhtml\System\Config\Form\Field\Heading</frontend_model>
+				</field>
+				<field id="enable_sms_new_order" translate="label comment" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enable</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="message_sms_new_order" translate="label comment" type="textarea" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Message</label>
+					<comment><![CDATA[{{order_id}},{{mobilenumber}},{{order_total}},
+						{{first_name}},{{last_name}},{{customer_email}},{{shop_name}}]]></comment>
+				</field>
+
+				<field id="sms_contact_us_heading" translate="label comment" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Contact Us Notification</label>
+					<frontend_model>Lof\SmsNotification\Block\Adminhtml\System\Config\Form\Field\Heading</frontend_model>
+				</field>
+				<field id="enable_sms_contact_us" translate="label comment" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enable</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="message_sms_contact_us" translate="label comment" type="textarea" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Message</label>
+					<comment><![CDATA[{{name}},{{email}},{{mobilenumber}},{{message}}]]></comment>
+				</field>
+			</group> 
+			<group id="sms_otp" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Otp</label>
+				<field id="enable_otp" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Otp</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+              <!--   <field id="verify_register" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Verify Mobile Number at Registration Form	</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field> -->
+                 <field id="opt_format" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>OTP Format</label>
+                    <source_model>Lof\SmsNotification\Model\Config\Source\OtpFormat</source_model>
+                </field>
+                <field id="opt_length" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>OTP Length</label>
+                </field>
+                 <field id="opt_message" translate="label" type="textarea" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>OTP Message</label>
+                    <comment><![CDATA[Use {{var otp_code}} to add the otp code to sms message.]]></comment>
+                </field>
+                 <field id="opt_resend" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Resends OTP after (seconds)</label>
+                </field>
+			</group>
+			<group id="settings_input" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Settings Input Mobile</label>
+				<field id="initial_country" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Initial Country</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <comment>If select --Please Select--,Initial Country is Auto detected by customer IP</comment>
+                </field>
+                <field id="sallowspecific" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Allows Countries</label>
+                    <frontend_class>shipping-applicable-country</frontend_class>
+                    <source_model>Magento\Shipping\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                 <field id="preferredCountries" translate="label" type="multiselect" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Preferred Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+			</group>	
+        </section> 
+    </system>
+</config>

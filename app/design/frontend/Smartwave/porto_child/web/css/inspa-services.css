@@ -1,0 +1,86 @@
+/* InSpa Services Page */
+/* images and other styling */
+
+		#details {border: 0px solid red; width: 80%;margin:auto;padding:20px;min-height:300px}
+                #details.active {/*background-color:rgba(81, 103, 135, 0.5); color:#fff; text-shadow:0px 0px 5px #333;*/ border: 4px double #38B6E8; box-shadow:10px 10px 20px #ddd}
+		#linklist {border:0px solid purple; margin-left: 0px; font-size: 90%;}
+                .link {margin-left:0px; list-style:none; cursor:pointer; line-height:1.2; margin-bottom:5px;}
+		li div.hidefromlinklist {display:none;}
+		#details.click {display: block; }
+		#details div.hidefromlinklist {display:block; width: 100%; padding-bottom:10px; font-size: 80%;
+    line-height: 1.5;}
+                #details .body .linkname {display:none;}
+                #details .body .name {display:block; font-weight:400; line-height:1;font-size:100%;}
+                #smallpic {min-height:200px}
+
+.entry h2 {
+    font-weight: 200;
+    line-height: 1;
+    margin-bottom: 9px;
+}
+
+.bg1 {background-image: url("/wp-content/uploads/2018/08/2018-05-16-InSpa-Bellevue-5b.jpg") !important;
+background-size: cover;
+background-position: top, left;}
+
+.bg2 {/*background-image: url("/wp-content/uploads/2018/08/2018-05-15-InSpa-Redmond-3.jpg") !important;*/
+/*background-image: url("/wp-content/uploads/2018/06/2018-05-01-InSpa-Issaquah-1-2-1.jpg") !important;*/
+background-image: url("/wp-content/uploads/2018/09/2018-05-15-InSpa-Redmond-1.jpg") !important;
+background-size: cover;
+background-position: center, left;}
+
+.bg3 {background-image: url("/wp-content/uploads/2018/08/2018-05-15-InSpa-Redmond-27.jpg") !important;
+background-size: cover;
+background-position: center, left;}
+
+.bg4 {background-image: url("/wp-content/uploads/2018/07/2018-05-16-InSpa-Bellevue-15.jpg") !important;
+background-size: cover;
+background-position: bottom, left;}
+
+.bg5 {background-image: url("/wp-content/uploads/2018/08/0O8A0297-2018-05-15-InSpa-Redmond-2.jpg") !important;
+background-size: cover;
+background-position: center, center;}
+
+.bg6 {background-image: url("/wp-content/uploads/2018/08/0O8A1370-2018-05-16-InSpa-Bellevue.jpg") !important;
+background-size: cover;
+background-position: left, center;}
+
+
+.bg7 {background-image: url("/wp-content/uploads/2018/09/0O8A1505-Edit.jpg") !important;
+background-size: cover;
+background-position: left, center;}
+
+.bg8 {background-image: url("/wp-content/uploads/2018/10/2018-08-28-InSpa-product-shoot-0O8A2836-Edit-copy.jpg") !important;
+background-size: cover;
+background-position: right, center;}
+
+ul.leaders {
+    max-width: 540px;
+    padding: 0;
+    overflow-x: hidden;
+    list-style: none
+}
+
+.price:before {
+    float: left;
+    /*width: 0;*/
+    white-space: nowrap;
+    content:
+ ". . . . . . . . . . . . . . . . . . . . "}
+.price {float:right;}
+.name span:first-child {
+    padding-right: 0.33em;
+    background: white}
+
+.name span + span {
+    float: right;
+    padding-left: 0.33em;
+    background: white}
+
+/******MOBILE STYLING*****/
+@media only screen and (max-width: 600px) {
+  li div.hidefromlinklist {display:block;}
+  .linkname {display:none;}
+  li div.hidefromlinklist .name {font-weight:600;}
+}
+	

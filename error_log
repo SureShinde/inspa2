@@ -1,0 +1,260 @@
+[10-Jun-2019 12:55:08 UTC] PHP Fatal error:  Uncaught Error: Class 'Lof\SmsNotification\Controller\Adminhtml\Test\MessageBird' not found in /home/devbatch/public_html/app/code/Lof/SmsNotification/Controller/Adminhtml/Test/Index.php:121
+Stack trace:
+#0 /home/devbatch/public_html/generated/code/Lof/SmsNotification/Controller/Adminhtml/Test/Index/Interceptor.php(24): Lof\SmsNotification\Controller\Adminhtml\Test\Index->execute()
+#1 /home/devbatch/public_html/vendor/magento/framework/App/Action/Action.php(108): Lof\SmsNotification\Controller\Adminhtml\Test\Index\Interceptor->execute()
+#2 /home/devbatch/public_html/vendor/magento/module-backend/App/AbstractAction.php(231): Magento\Framework\App\Action\Action->dispatch(Object(Magento\Framework\App\Request\Http))
+#3 /home/devbatch/public_html/vendor/magento/framework/Interception/Interceptor.php(58): Magento\Backend\App\AbstractAction->dispatch(Object(Magento\Framework\App\Request\Http))
+#4 /home/devbatch/public_html/vendor/magento/framework/Interception/Interceptor.php(138): Lof\SmsNotification\Controller\Adm in /home/devbatch/public_html/app/code/Lof/SmsNotification/Controller/Adminhtml/Test/Index.php on line 121
+[11-Jun-2019 12:18:31 UTC] PHP Fatal error:  Uncaught Error: Class 'Lof\SmsNotification\Model\MessageBird' not found in /home/devbatch/public_html/app/code/Lof/SmsNotification/Model/SendSms.php:139
+Stack trace:
+#0 /home/devbatch/public_html/app/code/Lof/SmsNotification/Observer/Orderplaceafter.php(74): Lof\SmsNotification\Model\SendSms->send('+923235554908', 'Dear ALi Hassna...', 'customer')
+#1 /home/devbatch/public_html/vendor/magento/framework/Event/Invoker/InvokerDefault.php(72): Lof\SmsNotification\Observer\Orderplaceafter->execute(Object(Magento\Framework\Event\Observer))
+#2 /home/devbatch/public_html/vendor/magento/framework/Event/Invoker/InvokerDefault.php(60): Magento\Framework\Event\Invoker\InvokerDefault->_callObserverMethod(Object(Lof\SmsNotification\Observer\Orderplaceafter), Object(Magento\Framework\Event\Observer))
+#3 /home/devbatch/public_html/vendor/magento/framework/Event/Manager.php(66): Magento\Framework\Event\Invoker\InvokerDefault->dispatch(Array, Object(Magento\Framework\Event\Observer))
+#4 /home/devbatch/public_html/generated/code in /home/devbatch/public_html/app/code/Lof/SmsNotification/Model/SendSms.php on line 139
+[11-Jun-2019 12:19:12 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getOrderAdminDate() on null in /home/devbatch/public_html/vendor/temando/module-shipping-m2/view/adminhtml/templates/sales/order/view/info.phtml:44
+Stack trace:
+#0 /home/devbatch/public_html/vendor/magento/framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/devbatch/public_html/vendor/magento/framework/View/Element/Template.php(271): Magento\Framework\View\TemplateEngine\Php->render(Object(Temando\Shipping\Block\Adminhtml\Sales\Order\View\Info\Interceptor), '/home/devbatch/...', Array)
+#2 /home/devbatch/public_html/generated/code/Temando/Shipping/Block/Adminhtml/Sales/Order/View/Info/Interceptor.php(544): Magento\Framework\View\Element\Template->fetchView('/home/devbatch/...')
+#3 /home/devbatch/public_html/vendor/magento/framework/View/Element/Template.php(301): Temando\Shipping\Block\Adminhtml\Sales\Order\View\Info\Interceptor->fetchView('/home/devbatch/...')
+#4 /home/devbatch/public_html/vendor/magento/module-backend/Block/Template.php(129): Magento\Framew in /home/devbatch/public_html/vendor/temando/module-shipping-m2/view/adminhtml/templates/sales/order/view/info.phtml on line 44
+[11-Jun-2019 12:19:26 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getOrderAdminDate() on null in /home/devbatch/public_html/vendor/temando/module-shipping-m2/view/adminhtml/templates/sales/order/view/info.phtml:44
+Stack trace:
+#0 /home/devbatch/public_html/vendor/magento/framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/devbatch/public_html/vendor/magento/framework/View/Element/Template.php(271): Magento\Framework\View\TemplateEngine\Php->render(Object(Temando\Shipping\Block\Adminhtml\Sales\Order\View\Info\Interceptor), '/home/devbatch/...', Array)
+#2 /home/devbatch/public_html/generated/code/Temando/Shipping/Block/Adminhtml/Sales/Order/View/Info/Interceptor.php(544): Magento\Framework\View\Element\Template->fetchView('/home/devbatch/...')
+#3 /home/devbatch/public_html/vendor/magento/framework/View/Element/Template.php(301): Temando\Shipping\Block\Adminhtml\Sales\Order\View\Info\Interceptor->fetchView('/home/devbatch/...')
+#4 /home/devbatch/public_html/vendor/magento/module-backend/Block/Template.php(129): Magento\Framew in /home/devbatch/public_html/vendor/temando/module-shipping-m2/view/adminhtml/templates/sales/order/view/info.phtml on line 44
+[11-Jun-2019 12:19:32 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getOrderAdminDate() on null in /home/devbatch/public_html/vendor/temando/module-shipping-m2/view/adminhtml/templates/sales/order/view/info.phtml:44
+Stack trace:
+#0 /home/devbatch/public_html/vendor/magento/framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/devbatch/public_html/vendor/magento/framework/View/Element/Template.php(271): Magento\Framework\View\TemplateEngine\Php->render(Object(Temando\Shipping\Block\Adminhtml\Sales\Order\View\Info\Interceptor), '/home/devbatch/...', Array)
+#2 /home/devbatch/public_html/generated/code/Temando/Shipping/Block/Adminhtml/Sales/Order/View/Info/Interceptor.php(544): Magento\Framework\View\Element\Template->fetchView('/home/devbatch/...')
+#3 /home/devbatch/public_html/vendor/magento/framework/View/Element/Template.php(301): Temando\Shipping\Block\Adminhtml\Sales\Order\View\Info\Interceptor->fetchView('/home/devbatch/...')
+#4 /home/devbatch/public_html/vendor/magento/module-backend/Block/Template.php(129): Magento\Framew in /home/devbatch/public_html/vendor/temando/module-shipping-m2/view/adminhtml/templates/sales/order/view/info.phtml on line 44
+[11-Jun-2019 12:20:29 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getOrderAdminDate() on null in /home/devbatch/public_html/vendor/temando/module-shipping-m2/view/adminhtml/templates/sales/order/view/info.phtml:44
+Stack trace:
+#0 /home/devbatch/public_html/vendor/magento/framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/devbatch/public_html/vendor/magento/framework/View/Element/Template.php(271): Magento\Framework\View\TemplateEngine\Php->render(Object(Temando\Shipping\Block\Adminhtml\Sales\Order\View\Info\Interceptor), '/home/devbatch/...', Array)
+#2 /home/devbatch/public_html/generated/code/Temando/Shipping/Block/Adminhtml/Sales/Order/View/Info/Interceptor.php(544): Magento\Framework\View\Element\Template->fetchView('/home/devbatch/...')
+#3 /home/devbatch/public_html/vendor/magento/framework/View/Element/Template.php(301): Temando\Shipping\Block\Adminhtml\Sales\Order\View\Info\Interceptor->fetchView('/home/devbatch/...')
+#4 /home/devbatch/public_html/vendor/magento/module-backend/Block/Template.php(129): Magento\Framew in /home/devbatch/public_html/vendor/temando/module-shipping-m2/view/adminhtml/templates/sales/order/view/info.phtml on line 44
+[11-Jun-2019 12:26:24 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getOrderAdminDate() on null in /home/devbatch/public_html/vendor/temando/module-shipping-m2/view/adminhtml/templates/sales/order/view/info.phtml:44
+Stack trace:
+#0 /home/devbatch/public_html/vendor/magento/framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/devbatch/public_html/vendor/magento/framework/View/Element/Template.php(271): Magento\Framework\View\TemplateEngine\Php->render(Object(Temando\Shipping\Block\Adminhtml\Sales\Order\View\Info\Interceptor), '/home/devbatch/...', Array)
+#2 /home/devbatch/public_html/generated/code/Temando/Shipping/Block/Adminhtml/Sales/Order/View/Info/Interceptor.php(544): Magento\Framework\View\Element\Template->fetchView('/home/devbatch/...')
+#3 /home/devbatch/public_html/vendor/magento/framework/View/Element/Template.php(301): Temando\Shipping\Block\Adminhtml\Sales\Order\View\Info\Interceptor->fetchView('/home/devbatch/...')
+#4 /home/devbatch/public_html/vendor/magento/module-backend/Block/Template.php(129): Magento\Framew in /home/devbatch/public_html/vendor/temando/module-shipping-m2/view/adminhtml/templates/sales/order/view/info.phtml on line 44
+[11-Jun-2019 13:53:30 UTC] PHP Fatal error:  Uncaught Error: Class 'Lof\SmsNotification\Model\MessageBird' not found in /home/devbatch/public_html/app/code/Lof/SmsNotification/Model/SendSms.php:139
+Stack trace:
+#0 /home/devbatch/public_html/app/code/Lof/SmsNotification/Observer/Orderplaceafter.php(74): Lof\SmsNotification\Model\SendSms->send('03214010428', 'Dear  , thank y...', 'customer')
+#1 /home/devbatch/public_html/vendor/magento/framework/Event/Invoker/InvokerDefault.php(72): Lof\SmsNotification\Observer\Orderplaceafter->execute(Object(Magento\Framework\Event\Observer))
+#2 /home/devbatch/public_html/vendor/magento/framework/Event/Invoker/InvokerDefault.php(60): Magento\Framework\Event\Invoker\InvokerDefault->_callObserverMethod(Object(Lof\SmsNotification\Observer\Orderplaceafter), Object(Magento\Framework\Event\Observer))
+#3 /home/devbatch/public_html/vendor/magento/framework/Event/Manager.php(66): Magento\Framework\Event\Invoker\InvokerDefault->dispatch(Array, Object(Magento\Framework\Event\Observer))
+#4 /home/devbatch/public_html/generated/code/M in /home/devbatch/public_html/app/code/Lof/SmsNotification/Model/SendSms.php on line 139
+[13-Jun-2019 10:16:23 UTC] PHP Fatal error:  Class 'Mageplaza\Core\Helper\AbstractData' not found in /home/devbatch/public_html/app/code/Mageplaza/AbandonedCart/Helper/Data.php on line 42
+[13-Jun-2019 10:16:25 UTC] PHP Fatal error:  Class 'Mageplaza\Core\Helper\AbstractData' not found in /home/devbatch/public_html/app/code/Mageplaza/AbandonedCart/Helper/Data.php on line 42
+[13-Jun-2019 10:16:27 UTC] PHP Fatal error:  Class 'Mageplaza\Core\Helper\AbstractData' not found in /home/devbatch/public_html/app/code/Mageplaza/AbandonedCart/Helper/Data.php on line 42
+[13-Jun-2019 10:16:28 UTC] PHP Fatal error:  Class 'Mageplaza\Core\Helper\AbstractData' not found in /home/devbatch/public_html/app/code/Mageplaza/AbandonedCart/Helper/Data.php on line 42
+[13-Jun-2019 10:16:30 UTC] PHP Fatal error:  Class 'Mageplaza\Core\Helper\AbstractData' not found in /home/devbatch/public_html/app/code/Mageplaza/AbandonedCart/Helper/Data.php on line 42
+[13-Jun-2019 10:16:32 UTC] PHP Fatal error:  Class 'Mageplaza\Core\Helper\AbstractData' not found in /home/devbatch/public_html/app/code/Mageplaza/AbandonedCart/Helper/Data.php on line 42
+[13-Jun-2019 10:16:32 UTC] PHP Fatal error:  Class 'Mageplaza\Core\Helper\AbstractData' not found in /home/devbatch/public_html/app/code/Mageplaza/AbandonedCart/Helper/Data.php on line 42
+[13-Jun-2019 10:16:34 UTC] PHP Fatal error:  Class 'Mageplaza\Core\Helper\AbstractData' not found in /home/devbatch/public_html/app/code/Mageplaza/AbandonedCart/Helper/Data.php on line 42
+[13-Jun-2019 10:16:34 UTC] PHP Fatal error:  Class 'Mageplaza\Core\Helper\AbstractData' not found in /home/devbatch/public_html/app/code/Mageplaza/AbandonedCart/Helper/Data.php on line 42
+[13-Jun-2019 10:16:36 UTC] PHP Fatal error:  Class 'Mageplaza\Core\Helper\AbstractData' not found in /home/devbatch/public_html/app/code/Mageplaza/AbandonedCart/Helper/Data.php on line 42
+[13-Jun-2019 10:16:42 UTC] PHP Fatal error:  Class 'Mageplaza\Core\Helper\AbstractData' not found in /home/devbatch/public_html/app/code/Mageplaza/AbandonedCart/Helper/Data.php on line 42
+[13-Jun-2019 10:16:44 UTC] PHP Fatal error:  Class 'Mageplaza\Core\Helper\AbstractData' not found in /home/devbatch/public_html/app/code/Mageplaza/AbandonedCart/Helper/Data.php on line 42
+[13-Jun-2019 10:16:46 UTC] PHP Fatal error:  Class 'Mageplaza\Core\Helper\AbstractData' not found in /home/devbatch/public_html/app/code/Mageplaza/AbandonedCart/Helper/Data.php on line 42
+[13-Jun-2019 10:16:47 UTC] PHP Fatal error:  Class 'Mageplaza\Core\Helper\AbstractData' not found in /home/devbatch/public_html/app/code/Mageplaza/AbandonedCart/Helper/Data.php on line 42
+[13-Jun-2019 10:16:48 UTC] PHP Fatal error:  Class 'Mageplaza\Core\Helper\AbstractData' not found in /home/devbatch/public_html/app/code/Mageplaza/AbandonedCart/Helper/Data.php on line 42
+[13-Jun-2019 10:16:49 UTC] PHP Fatal error:  Class 'Mageplaza\Core\Helper\AbstractData' not found in /home/devbatch/public_html/app/code/Mageplaza/AbandonedCart/Helper/Data.php on line 42
+[13-Jun-2019 10:16:50 UTC] PHP Fatal error:  Class 'Mageplaza\Core\Helper\AbstractData' not found in /home/devbatch/public_html/app/code/Mageplaza/AbandonedCart/Helper/Data.php on line 42
+[13-Jun-2019 10:16:52 UTC] PHP Fatal error:  Class 'Mageplaza\Core\Helper\AbstractData' not found in /home/devbatch/public_html/app/code/Mageplaza/AbandonedCart/Helper/Data.php on line 42
+[13-Jun-2019 10:16:52 UTC] PHP Fatal error:  Class 'Mageplaza\Core\Helper\AbstractData' not found in /home/devbatch/public_html/app/code/Mageplaza/AbandonedCart/Helper/Data.php on line 42
+[13-Jun-2019 10:16:53 UTC] PHP Fatal error:  Class 'Mageplaza\Core\Helper\AbstractData' not found in /home/devbatch/public_html/app/code/Mageplaza/AbandonedCart/Helper/Data.php on line 42
+[13-Jun-2019 10:16:54 UTC] PHP Fatal error:  Class 'Mageplaza\Core\Helper\AbstractData' not found in /home/devbatch/public_html/app/code/Mageplaza/AbandonedCart/Helper/Data.php on line 42
+[13-Jun-2019 10:16:55 UTC] PHP Fatal error:  Class 'Mageplaza\Core\Helper\AbstractData' not found in /home/devbatch/public_html/app/code/Mageplaza/AbandonedCart/Helper/Data.php on line 42
+[13-Jun-2019 10:16:56 UTC] PHP Fatal error:  Class 'Mageplaza\Core\Helper\AbstractData' not found in /home/devbatch/public_html/app/code/Mageplaza/AbandonedCart/Helper/Data.php on line 42
+[13-Jun-2019 10:16:58 UTC] PHP Fatal error:  Class 'Mageplaza\Core\Helper\AbstractData' not found in /home/devbatch/public_html/app/code/Mageplaza/AbandonedCart/Helper/Data.php on line 42
+[13-Jun-2019 12:44:12 UTC] PHP Fatal error:  Uncaught Error: Class 'Lof\SmsNotification\Model\MessageBird' not found in /home/devbatch/public_html/app/code/Lof/SmsNotification/Model/SendSms.php:139
+Stack trace:
+#0 /home/devbatch/public_html/app/code/Lof/SmsNotification/Observer/CustomerRegister.php(86): Lof\SmsNotification\Model\SendSms->send(NULL, 'Thank you Mubas...', 'customer')
+#1 /home/devbatch/public_html/vendor/magento/framework/Event/Invoker/InvokerDefault.php(72): Lof\SmsNotification\Observer\CustomerRegister->execute(Object(Magento\Framework\Event\Observer))
+#2 /home/devbatch/public_html/vendor/magento/framework/Event/Invoker/InvokerDefault.php(60): Magento\Framework\Event\Invoker\InvokerDefault->_callObserverMethod(Object(Lof\SmsNotification\Observer\CustomerRegister), Object(Magento\Framework\Event\Observer))
+#3 /home/devbatch/public_html/vendor/magento/framework/Event/Manager.php(66): Magento\Framework\Event\Invoker\InvokerDefault->dispatch(Array, Object(Magento\Framework\Event\Observer))
+#4 /home/devbatch/public_html/generated/code/Magento in /home/devbatch/public_html/app/code/Lof/SmsNotification/Model/SendSms.php on line 139
+[14-Jun-2019 07:24:13 UTC] PHP Fatal error:  Uncaught Error: Class 'Lof\SmsNotification\Model\MessageBird' not found in /home/devbatch/public_html/app/code/Lof/SmsNotification/Model/SendSms.php:139
+Stack trace:
+#0 /home/devbatch/public_html/app/code/Lof/SmsNotification/Observer/Orderplaceafter.php(74): Lof\SmsNotification\Model\SendSms->send('03214010428', 'Dear  , thank y...', 'customer')
+#1 /home/devbatch/public_html/vendor/magento/framework/Event/Invoker/InvokerDefault.php(72): Lof\SmsNotification\Observer\Orderplaceafter->execute(Object(Magento\Framework\Event\Observer))
+#2 /home/devbatch/public_html/vendor/magento/framework/Event/Invoker/InvokerDefault.php(60): Magento\Framework\Event\Invoker\InvokerDefault->_callObserverMethod(Object(Lof\SmsNotification\Observer\Orderplaceafter), Object(Magento\Framework\Event\Observer))
+#3 /home/devbatch/public_html/vendor/magento/framework/Event/Manager.php(66): Magento\Framework\Event\Invoker\InvokerDefault->dispatch(Array, Object(Magento\Framework\Event\Observer))
+#4 /home/devbatch/public_html/generated/code/M in /home/devbatch/public_html/app/code/Lof/SmsNotification/Model/SendSms.php on line 139
+[18-Jun-2019 11:30:24 UTC] PHP Fatal error:  Uncaught TypeError: Argument 3 passed to Magento\Framework\View\Element\UiComponentFactory::mergeMetadataElement() must be of the type array, null given, called in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 385 and defined in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php:335
+Stack trace:
+#0 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(385): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataElement(Array, 'configurableExi...', NULL, false)
+#1 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#2 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#3 /home/devbatch/public_html/vendor/magento/framework/ in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 335
+[18-Jun-2019 11:31:51 UTC] PHP Fatal error:  Uncaught TypeError: Argument 3 passed to Magento\Framework\View\Element\UiComponentFactory::mergeMetadataElement() must be of the type array, null given, called in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 385 and defined in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php:335
+Stack trace:
+#0 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(385): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataElement(Array, 'configurableExi...', NULL, false)
+#1 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#2 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#3 /home/devbatch/public_html/vendor/magento/framework/ in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 335
+[18-Jun-2019 11:32:06 UTC] PHP Fatal error:  Uncaught TypeError: Argument 3 passed to Magento\Framework\View\Element\UiComponentFactory::mergeMetadataElement() must be of the type array, null given, called in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 385 and defined in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php:335
+Stack trace:
+#0 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(385): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataElement(Array, 'configurableExi...', NULL, false)
+#1 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#2 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#3 /home/devbatch/public_html/vendor/magento/framework/ in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 335
+[18-Jun-2019 11:32:24 UTC] PHP Fatal error:  Uncaught TypeError: Argument 3 passed to Magento\Framework\View\Element\UiComponentFactory::mergeMetadataElement() must be of the type array, null given, called in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 385 and defined in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php:335
+Stack trace:
+#0 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(385): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataElement(Array, 'configurableExi...', NULL, false)
+#1 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#2 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#3 /home/devbatch/public_html/vendor/magento/framework/ in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 335
+[18-Jun-2019 11:32:30 UTC] PHP Fatal error:  Uncaught TypeError: Argument 3 passed to Magento\Framework\View\Element\UiComponentFactory::mergeMetadataElement() must be of the type array, null given, called in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 385 and defined in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php:335
+Stack trace:
+#0 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(385): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataElement(Array, 'configurableExi...', NULL, false)
+#1 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#2 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#3 /home/devbatch/public_html/vendor/magento/framework/ in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 335
+[18-Jun-2019 11:32:32 UTC] PHP Fatal error:  Uncaught TypeError: Argument 3 passed to Magento\Framework\View\Element\UiComponentFactory::mergeMetadataElement() must be of the type array, null given, called in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 385 and defined in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php:335
+Stack trace:
+#0 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(385): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataElement(Array, 'configurableExi...', NULL, false)
+#1 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#2 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#3 /home/devbatch/public_html/vendor/magento/framework/ in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 335
+[18-Jun-2019 11:32:46 UTC] PHP Fatal error:  Uncaught TypeError: Argument 3 passed to Magento\Framework\View\Element\UiComponentFactory::mergeMetadataElement() must be of the type array, null given, called in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 385 and defined in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php:335
+Stack trace:
+#0 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(385): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataElement(Array, 'configurableExi...', NULL, false)
+#1 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#2 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#3 /home/devbatch/public_html/vendor/magento/framework/ in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 335
+[18-Jun-2019 11:32:59 UTC] PHP Fatal error:  Uncaught TypeError: Argument 3 passed to Magento\Framework\View\Element\UiComponentFactory::mergeMetadataElement() must be of the type array, null given, called in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 385 and defined in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php:335
+Stack trace:
+#0 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(385): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataElement(Array, 'configurableExi...', NULL, false)
+#1 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#2 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#3 /home/devbatch/public_html/vendor/magento/framework/ in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 335
+[18-Jun-2019 11:33:12 UTC] PHP Fatal error:  Uncaught TypeError: Argument 3 passed to Magento\Framework\View\Element\UiComponentFactory::mergeMetadataElement() must be of the type array, null given, called in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 385 and defined in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php:335
+Stack trace:
+#0 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(385): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataElement(Array, 'configurableExi...', NULL, false)
+#1 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#2 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#3 /home/devbatch/public_html/vendor/magento/framework/ in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 335
+[18-Jun-2019 11:34:48 UTC] PHP Fatal error:  Uncaught TypeError: Argument 3 passed to Magento\Framework\View\Element\UiComponentFactory::mergeMetadataElement() must be of the type array, null given, called in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 385 and defined in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php:335
+Stack trace:
+#0 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(385): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataElement(Array, 'configurableExi...', NULL, false)
+#1 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#2 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#3 /home/devbatch/public_html/vendor/magento/framework/ in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 335
+[18-Jun-2019 11:34:59 UTC] PHP Fatal error:  Uncaught TypeError: Argument 3 passed to Magento\Framework\View\Element\UiComponentFactory::mergeMetadataElement() must be of the type array, null given, called in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 385 and defined in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php:335
+Stack trace:
+#0 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(385): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataElement(Array, 'configurableExi...', NULL, false)
+#1 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#2 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#3 /home/devbatch/public_html/vendor/magento/framework/ in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 335
+[18-Jun-2019 11:36:33 UTC] PHP Fatal error:  Uncaught TypeError: Argument 3 passed to Magento\Framework\View\Element\UiComponentFactory::mergeMetadataElement() must be of the type array, null given, called in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 385 and defined in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php:335
+Stack trace:
+#0 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(385): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataElement(Array, 'configurableExi...', NULL, false)
+#1 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#2 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#3 /home/devbatch/public_html/vendor/magento/framework/ in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 335
+[18-Jun-2019 11:39:00 UTC] PHP Fatal error:  Uncaught TypeError: Argument 3 passed to Magento\Framework\View\Element\UiComponentFactory::mergeMetadataElement() must be of the type array, null given, called in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 385 and defined in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php:335
+Stack trace:
+#0 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(385): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataElement(Array, 'configurableExi...', NULL, false)
+#1 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#2 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#3 /home/devbatch/public_html/vendor/magento/framework/ in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 335
+[18-Jun-2019 11:39:14 UTC] PHP Fatal error:  Uncaught TypeError: Argument 3 passed to Magento\Framework\View\Element\UiComponentFactory::mergeMetadataElement() must be of the type array, null given, called in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 385 and defined in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php:335
+Stack trace:
+#0 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(385): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataElement(Array, 'configurableExi...', NULL, false)
+#1 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#2 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#3 /home/devbatch/public_html/vendor/magento/framework/ in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 335
+[18-Jun-2019 11:39:17 UTC] PHP Fatal error:  Uncaught TypeError: Argument 3 passed to Magento\Framework\View\Element\UiComponentFactory::mergeMetadataElement() must be of the type array, null given, called in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 385 and defined in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php:335
+Stack trace:
+#0 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(385): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataElement(Array, 'configurableExi...', NULL, false)
+#1 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#2 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#3 /home/devbatch/public_html/vendor/magento/framework/ in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 335
+[18-Jun-2019 11:41:25 UTC] PHP Fatal error:  Uncaught TypeError: Argument 3 passed to Magento\Framework\View\Element\UiComponentFactory::mergeMetadataElement() must be of the type array, null given, called in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 385 and defined in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php:335
+Stack trace:
+#0 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(385): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataElement(Array, 'configurableExi...', NULL, false)
+#1 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#2 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#3 /home/devbatch/public_html/vendor/magento/framework/ in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 335
+[18-Jun-2019 11:42:33 UTC] PHP Fatal error:  Uncaught TypeError: Argument 3 passed to Magento\Framework\View\Element\UiComponentFactory::mergeMetadataElement() must be of the type array, null given, called in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 385 and defined in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php:335
+Stack trace:
+#0 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(385): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataElement(Array, 'configurableExi...', NULL, false)
+#1 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#2 /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php(410): Magento\Framework\View\Element\UiComponentFactory->mergeMetadataItem(Array, Array, false)
+#3 /home/devbatch/public_html/vendor/magento/framework/ in /home/devbatch/public_html/vendor/magento/framework/View/Element/UiComponentFactory.php on line 335
+[27-Jun-2019 07:58:21 UTC] PHP Fatal error:  Declaration of Temando\Shipping\Model\ResourceModel\CollectionPoint\OrderCollectionPointRepository::save(Temando\Shipping\Api\Data\CollectionPoint\OrderCollectionPointInterface $collectionPoint) must be compatible with Temando\Shipping\Model\ResourceModel\Repository\OrderCollectionPointRepositoryInterface::save(Temando\Shipping\Api\Data\Delivery\OrderCollectionPointInterface $collectionPoint) in /home/devbatch/public_html/vendor/temando/module-shipping-m2/Model/ResourceModel/CollectionPoint/OrderCollectionPointRepository.php on line 24
+[27-Jun-2019 07:59:21 UTC] PHP Fatal error:  Declaration of Temando\Shipping\Model\ResourceModel\CollectionPoint\OrderCollectionPointRepository::save(Temando\Shipping\Api\Data\CollectionPoint\OrderCollectionPointInterface $collectionPoint) must be compatible with Temando\Shipping\Model\ResourceModel\Repository\OrderCollectionPointRepositoryInterface::save(Temando\Shipping\Api\Data\Delivery\OrderCollectionPointInterface $collectionPoint) in /home/devbatch/public_html/vendor/temando/module-shipping-m2/Model/ResourceModel/CollectionPoint/OrderCollectionPointRepository.php on line 24
+[01-Jul-2019 06:08:37 UTC] PHP Fatal error:  Uncaught Error: Class 'Intercom\IntercomClient' not found in /home/devbatch/public_html/app/code/CompactCode/Intercom/Block/Customer/Index.php:49
+Stack trace:
+#0 /home/devbatch/public_html/app/code/CompactCode/Intercom/view/frontend/templates/customer/index.phtml(13): CompactCode\Intercom\Block\Customer\Index->getTickets()
+#1 /home/devbatch/public_html/vendor/magento/framework/View/TemplateEngine/Php.php(59): include('/home/devbatch/...')
+#2 /home/devbatch/public_html/vendor/magento/framework/View/Element/Template.php(271): Magento\Framework\View\TemplateEngine\Php->render(Object(CompactCode\Intercom\Block\Customer\Index), '/home/devbatch/...', Array)
+#3 /home/devbatch/public_html/vendor/magento/framework/View/Element/Template.php(301): Magento\Framework\View\Element\Template->fetchView('/home/devbatch/...')
+#4 /home/devbatch/public_html/vendor/magento/framework/View/Element/AbstractBlock.php(668): Magento\Framework\View\Element\Template->_toHtml()
+#5 /home/devbatch/public_html/vendor/magento/framework/View/L in /home/devbatch/public_html/app/code/CompactCode/Intercom/Block/Customer/Index.php on line 49
+[01-Jul-2019 06:08:43 UTC] PHP Fatal error:  Uncaught Error: Class 'Intercom\IntercomClient' not found in /home/devbatch/public_html/app/code/CompactCode/Intercom/Block/Customer/Index.php:49
+Stack trace:
+#0 /home/devbatch/public_html/app/code/CompactCode/Intercom/view/frontend/templates/customer/index.phtml(13): CompactCode\Intercom\Block\Customer\Index->getTickets()
+#1 /home/devbatch/public_html/vendor/magento/framework/View/TemplateEngine/Php.php(59): include('/home/devbatch/...')
+#2 /home/devbatch/public_html/vendor/magento/framework/View/Element/Template.php(271): Magento\Framework\View\TemplateEngine\Php->render(Object(CompactCode\Intercom\Block\Customer\Index), '/home/devbatch/...', Array)
+#3 /home/devbatch/public_html/vendor/magento/framework/View/Element/Template.php(301): Magento\Framework\View\Element\Template->fetchView('/home/devbatch/...')
+#4 /home/devbatch/public_html/vendor/magento/framework/View/Element/AbstractBlock.php(668): Magento\Framework\View\Element\Template->_toHtml()
+#5 /home/devbatch/public_html/vendor/magento/framework/View/L in /home/devbatch/public_html/app/code/CompactCode/Intercom/Block/Customer/Index.php on line 49
+[01-Jul-2019 06:08:54 UTC] PHP Fatal error:  Uncaught Error: Class 'Intercom\IntercomClient' not found in /home/devbatch/public_html/app/code/CompactCode/Intercom/Block/Customer/Index.php:49
+Stack trace:
+#0 /home/devbatch/public_html/app/code/CompactCode/Intercom/view/frontend/templates/customer/index.phtml(13): CompactCode\Intercom\Block\Customer\Index->getTickets()
+#1 /home/devbatch/public_html/vendor/magento/framework/View/TemplateEngine/Php.php(59): include('/home/devbatch/...')
+#2 /home/devbatch/public_html/vendor/magento/framework/View/Element/Template.php(271): Magento\Framework\View\TemplateEngine\Php->render(Object(CompactCode\Intercom\Block\Customer\Index), '/home/devbatch/...', Array)
+#3 /home/devbatch/public_html/vendor/magento/framework/View/Element/Template.php(301): Magento\Framework\View\Element\Template->fetchView('/home/devbatch/...')
+#4 /home/devbatch/public_html/vendor/magento/framework/View/Element/AbstractBlock.php(668): Magento\Framework\View\Element\Template->_toHtml()
+#5 /home/devbatch/public_html/vendor/magento/framework/View/L in /home/devbatch/public_html/app/code/CompactCode/Intercom/Block/Customer/Index.php on line 49
+[01-Jul-2019 06:11:49 UTC] PHP Fatal error:  Uncaught Error: Class 'Intercom\IntercomClient' not found in /home/devbatch/public_html/app/code/CompactCode/Intercom/Block/Customer/Index.php:49
+Stack trace:
+#0 /home/devbatch/public_html/app/code/CompactCode/Intercom/view/frontend/templates/customer/index.phtml(13): CompactCode\Intercom\Block\Customer\Index->getTickets()
+#1 /home/devbatch/public_html/vendor/magento/framework/View/TemplateEngine/Php.php(59): include('/home/devbatch/...')
+#2 /home/devbatch/public_html/vendor/magento/framework/View/Element/Template.php(271): Magento\Framework\View\TemplateEngine\Php->render(Object(CompactCode\Intercom\Block\Customer\Index), '/home/devbatch/...', Array)
+#3 /home/devbatch/public_html/vendor/magento/framework/View/Element/Template.php(301): Magento\Framework\View\Element\Template->fetchView('/home/devbatch/...')
+#4 /home/devbatch/public_html/vendor/magento/framework/View/Element/AbstractBlock.php(668): Magento\Framework\View\Element\Template->_toHtml()
+#5 /home/devbatch/public_html/vendor/magento/framework/View/L in /home/devbatch/public_html/app/code/CompactCode/Intercom/Block/Customer/Index.php on line 49
+[01-Jul-2019 06:13:54 UTC] PHP Fatal error:  Uncaught Error: Class 'Intercom\IntercomClient' not found in /home/devbatch/public_html/app/code/CompactCode/Intercom/Block/Customer/Index.php:49
+Stack trace:
+#0 /home/devbatch/public_html/app/code/CompactCode/Intercom/view/frontend/templates/customer/index.phtml(13): CompactCode\Intercom\Block\Customer\Index->getTickets()
+#1 /home/devbatch/public_html/vendor/magento/framework/View/TemplateEngine/Php.php(59): include('/home/devbatch/...')
+#2 /home/devbatch/public_html/vendor/magento/framework/View/Element/Template.php(271): Magento\Framework\View\TemplateEngine\Php->render(Object(CompactCode\Intercom\Block\Customer\Index), '/home/devbatch/...', Array)
+#3 /home/devbatch/public_html/vendor/magento/framework/View/Element/Template.php(301): Magento\Framework\View\Element\Template->fetchView('/home/devbatch/...')
+#4 /home/devbatch/public_html/vendor/magento/framework/View/Element/AbstractBlock.php(668): Magento\Framework\View\Element\Template->_toHtml()
+#5 /home/devbatch/public_html/vendor/magento/framework/View/L in /home/devbatch/public_html/app/code/CompactCode/Intercom/Block/Customer/Index.php on line 49
+[01-Jul-2019 06:17:11 UTC] PHP Fatal error:  Uncaught Error: Class 'Intercom\IntercomClient' not found in /home/devbatch/public_html/app/code/CompactCode/Intercom/Block/Customer/Index.php:49
+Stack trace:
+#0 /home/devbatch/public_html/app/code/CompactCode/Intercom/view/frontend/templates/customer/index.phtml(13): CompactCode\Intercom\Block\Customer\Index->getTickets()
+#1 /home/devbatch/public_html/vendor/magento/framework/View/TemplateEngine/Php.php(59): include('/home/devbatch/...')
+#2 /home/devbatch/public_html/vendor/magento/framework/View/Element/Template.php(271): Magento\Framework\View\TemplateEngine\Php->render(Object(CompactCode\Intercom\Block\Customer\Index), '/home/devbatch/...', Array)
+#3 /home/devbatch/public_html/vendor/magento/framework/View/Element/Template.php(301): Magento\Framework\View\Element\Template->fetchView('/home/devbatch/...')
+#4 /home/devbatch/public_html/vendor/magento/framework/View/Element/AbstractBlock.php(668): Magento\Framework\View\Element\Template->_toHtml()
+#5 /home/devbatch/public_html/vendor/magento/framework/View/L in /home/devbatch/public_html/app/code/CompactCode/Intercom/Block/Customer/Index.php on line 49
+[02-Jul-2019 09:48:28 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getData() on null in /home/devbatch/public_html/app/code/Lof/SmsNotification/Observer/Orderplaceafter.php:67
+Stack trace:
+#0 /home/devbatch/public_html/vendor/magento/framework/Event/Invoker/InvokerDefault.php(72): Lof\SmsNotification\Observer\Orderplaceafter->execute(Object(Magento\Framework\Event\Observer))
+#1 /home/devbatch/public_html/vendor/magento/framework/Event/Invoker/InvokerDefault.php(60): Magento\Framework\Event\Invoker\InvokerDefault->_callObserverMethod(Object(Lof\SmsNotification\Observer\Orderplaceafter), Object(Magento\Framework\Event\Observer))
+#2 /home/devbatch/public_html/vendor/magento/framework/Event/Manager.php(66): Magento\Framework\Event\Invoker\InvokerDefault->dispatch(Array, Object(Magento\Framework\Event\Observer))
+#3 /home/devbatch/public_html/generated/code/Magento/Framework/Event/Manager/Proxy.php(95): Magento\Framework\Event\Manager->dispatch('checkout_onepag...', Array)
+#4 /home/devbatch/public_html/vendor/magento/module-checkout/Contro in /home/devbatch/public_html/app/code/Lof/SmsNotification/Observer/Orderplaceafter.php on line 67
+[10-Jul-2019 03:50:52 UTC] PHP Fatal error:  Uncaught Zend\Http\Header\Exception\InvalidArgumentException: A field name was provided without a field value in /home/devbatch/public_html/vendor/zendframework/zend-http/src/Headers.php:192
+Stack trace:
+#0 /home/devbatch/public_html/vendor/zendframework/zend-http/src/Headers.php(155): Zend\Http\Headers->addHeaderLine('Mozilla/5.0 (Wi...')
+#1 /home/devbatch/public_html/vendor/zendframework/zend-http/src/PhpEnvironment/Request.php(236): Zend\Http\Headers->addHeaders(Array)
+#2 /home/devbatch/public_html/vendor/zendframework/zend-http/src/PhpEnvironment/Request.php(84): Zend\Http\PhpEnvironment\Request->setServer(Object(Zend\Stdlib\Parameters))
+#3 /home/devbatch/public_html/vendor/magento/framework/HTTP/PhpEnvironment/Request.php(133): Zend\Http\PhpEnvironment\Request->__construct()
+#4 /home/devbatch/public_html/vendor/magento/framework/App/Request/Http.php(123): Magento\Framework\HTTP\PhpEnvironment\Request->__construct(Object(Magento\Framework\Stdlib\Cookie\PhpCookieReader), Object(Magento\Framework\Stdlib\Str in /home/devbatch/public_html/vendor/zendframework/zend-http/src/Headers.php on line 192

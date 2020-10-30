@@ -1,0 +1,69 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/* Code by Lof - SMS Start*/
+$helper      = $this->helper("Lof\SmsNotification\Helper\Data");  
+//Get Object Manager Instance
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+
+if($helper->isLoggedIn()) {
+    $customer = $helper->getCustomer();
+    $customer_id = $customer->getId();
+    $phone = $objectManager->create('Lof\SmsNotification\Model\Phone')->load($customer_id,'customer_id');
+ 
+   if($phone && count($phone->getData()) > 0) {
+        $_SESSION["isVerifyMobile"] = 1;
+   }
+} 
+if(!$helper->getConfig('general_settings/enable_module')) {
+    $_SESSION["isVerifyMobile"] = 1;
+}
+if( isset($_SESSION["isVerifyMobile"]) && $_SESSION["isVerifyMobile"] == 1){
+/* Code by Lof - SMS End*/
+?>
+
+<div id="checkout" data-bind="scope:'checkout'" class="checkout-container">
+    <div id="checkout-loader" data-role="checkout-loader" class="loading-mask" data-mage-init='{"checkoutLoader": {}}'>
+        <div class="loader">
+            <img src="<?php /* @escapeNotVerified */ echo $block->getViewFileUrl('images/loader-1.gif'); ?>"
+                 alt="<?php /* @escapeNotVerified */ echo __('Loading...'); ?>"
+                 style="position: absolute;">
+        </div>
+    </div>
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <script type="text/x-magento-init">
+        {
+            "#checkout": {
+                "Magento_Ui/js/core/app": <?php /* @escapeNotVerified */ echo $block->getJsLayout();?>
+            }
+        }
+    </script>
+    <script>
+        window.checkoutConfig = <?php /* @escapeNotVerified */ echo \Zend_Json::encode($block->getCheckoutConfig()); ?>;
+        // Create aliases for customer.js model from customer module
+        window.isCustomerLoggedIn = window.checkoutConfig.isCustomerLoggedIn;
+        window.customerData = window.checkoutConfig.customerData;
+    </script>
+    <script>
+        require([
+            'mage/url',
+            'Magento_Ui/js/block-loader'
+        ], function(url, blockLoader) {
+            blockLoader("<?php /* @escapeNotVerified */ echo $block->getViewFileUrl('images/loader-1.gif'); ?>");
+            return url.setBaseUrl('<?php /* @escapeNotVerified */ echo $block->getBaseUrl();?>');
+        })
+    </script>
+</div>
+<?php
+$_SESSION["isVerifyMobile"] = 0;
+/* Code by Lof - SMS Start*/
+}
+else{
+	echo $this->getLayout()->createBlock("Magento\Framework\View\Element\Template")->setTemplate("Lof_SmsNotification::otp/otpverify.phtml")->toHtml();
+}
+/* Code by Lof - SMS End*/

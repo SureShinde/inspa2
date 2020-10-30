@@ -1,0 +1,30 @@
+<?php
+$collection      = $this->getCollection();
+$total           = $collection->count();
+$blockId         = rand().time();
+$tabId           = 'formbuilder'.$blockId;
+$widget_class    = $this->getConfig('prefix_class');
+$widget_title    = $this->getConfig('title');
+$grid_pagination = $this->getConfig('grid_pagination');
+?>
+<div id="<?php echo $tabId; ?>" class="formbuilder-messages <?php echo $widget_class; ?>">
+	<div class="row lof-formbuilder">
+		<?php if($widget_title){ ?>
+			<div class="block-title content-heading">
+				<?php if($widget_title){ ?><h2 class="title"><?php echo $widget_title ?></h2><?php } ?>
+			</div>
+			<?php } ?>
+			<div class="formbuilder-container">
+				<?php if($total){ ?>
+					<ul>
+						<?php foreach ($collection as $_message) { ?>
+							<li><?php echo $_message->getMessage() ?></li>
+							<?php } ?>	
+						</ul>
+						<?php } ?>
+					</div>
+					<?php if($grid_pagination){ ?>
+						<?php echo $this->getPagerHtml(); ?>
+						<?php } ?>
+					</div>
+				</div>

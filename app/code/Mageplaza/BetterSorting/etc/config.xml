@@ -1,0 +1,115 @@
+<?xml version="1.0"?><!--
+/**
+ * Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.mageplaza.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_BetterSorting
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <mpbettersorting>
+            <general>
+                <enabled>1</enabled>
+                <out_of_stock_end>qty_base</out_of_stock_end>
+                <sort_search_page>relevance</sort_search_page>
+                <discount>
+                    <enabled>1</enabled>
+                    <label>Discount</label>
+                    <base>amount</base>
+                    <apply>category_page,search_page</apply>
+                    <direction>DESC</direction>
+                    <sort_order>1</sort_order>
+                </discount>
+                <bestseller>
+                    <enabled>1</enabled>
+                    <label>Bestseller</label>
+                    <apply>category_page,search_page</apply>
+                    <direction>DESC</direction>
+                    <sort_order>2</sort_order>
+                </bestseller>
+                <most_viewed>
+                    <enabled>1</enabled>
+                    <label>Most Viewed</label>
+                    <apply>category_page,search_page</apply>
+                    <direction>DESC</direction>
+                    <sort_order>3</sort_order>
+                </most_viewed>
+                <top_rated>
+                    <enabled>1</enabled>
+                    <label>Top Rated</label>
+                    <apply>category_page,search_page</apply>
+                    <direction>DESC</direction>
+                    <sort_order>4</sort_order>
+                </top_rated>
+                <reviews_count>
+                    <enabled>1</enabled>
+                    <label>Reviews Count</label>
+                    <apply>category_page,search_page</apply>
+                    <direction>DESC</direction>
+                    <sort_order>5</sort_order>
+                </reviews_count>
+                <new_arrivals>
+                    <enabled>1</enabled>
+                    <label>New Arrivals</label>
+                    <apply>category_page,search_page</apply>
+                    <direction>DESC</direction>
+                    <sort_order>6</sort_order>
+                </new_arrivals>
+                <stock_quantity>
+                    <enabled>1</enabled>
+                    <label>Stock Quantity</label>
+                    <apply>category_page,search_page</apply>
+                    <direction>ASC</direction>
+                    <sort_order>7</sort_order>
+                </stock_quantity>
+                <wish_list>
+                    <enabled>1</enabled>
+                    <label>Added to Wishlist</label>
+                    <apply>category_page,search_page</apply>
+                    <direction>DESC</direction>
+                    <sort_order>8</sort_order>
+                </wish_list>
+                <name>
+                    <enabled>1</enabled>
+                    <label>Product Name</label>
+                    <apply>category_page,search_page</apply>
+                    <direction>ASC</direction>
+                    <sort_order>9</sort_order>
+                </name>
+                <price>
+                    <enabled>1</enabled>
+                    <label>Price</label>
+                    <apply>category_page,search_page</apply>
+                    <direction>ASC</direction>
+                    <sort_order>10</sort_order>
+                </price>
+                <position>
+                    <enabled>1</enabled>
+                    <label>Position</label>
+                    <direction>ASC</direction>
+                    <sort_order>11</sort_order>
+                </position>
+                <relevance>
+                    <enabled>1</enabled>
+                    <label>Relevance</label>
+                    <direction>DESC</direction>
+                    <sort_order>12</sort_order>
+                </relevance>
+            </general>
+        </mpbettersorting>
+    </default>
+</config>

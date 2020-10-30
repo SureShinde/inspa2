@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magebest
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Magebest.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.magebest.com/LICENSE.txt
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category   Magebest
+ * @package    Magebest_Brand
+ * @copyright  Copyright (c) 2014 Magebest (https://www.magebest.com/)
+ * @license    https://www.magebest.com/LICENSE.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="catalog_product_edit_action">
+        <observer name="magebest_brand_loadproductbrand" instance="Magebest\Brand\Observer\LoadProductBrand" />
+    </event>
+    <event name="controller_action_catalog_product_save_entity_after">
+        <observer name="magebest_brand_saveproductbrand" instance="Magebest\Brand\Observer\SaveProductBrand" />
+    </event>
+    <event name="catalog_product_save_after">
+        <observer name="magebest_brand_saveproductbrand" instance="Magebest\Brand\Observer\SaveProductBrandModel" />
+    </event>
+    <event name="catalog_product_attribute_update_after">
+    	<observer name="magebest_brand_saveattributeproductbrand" instance="Magebest\Brand\Observer\MassUpdateAttributeBrandModel" />
+    </event>
+</config>

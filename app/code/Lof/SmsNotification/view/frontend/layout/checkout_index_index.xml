@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<head>
+        <css src="Lof_SmsNotification::css/intlTelInput.min.css"/>  
+        <css src="Lof_SmsNotification::css/style.css"/>
+    </head>
+    <body>
+        <referenceBlock name="content">
+			  <referenceBlock name="checkout.root" >
+                <action method="setTemplate"  ifconfig="lofsmsnotification/sms_otp/enable_otp">
+                    <argument name="template" translate="true" xsi:type="string">Lof_SmsNotification::onepage.phtml</argument>
+                </action>
+            </referenceBlock>
+               
+        </referenceBlock>
+    </body>
+</page>

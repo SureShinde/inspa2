@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<page layout="2columns-right" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+        <block class="Magento\Cms\Block\Block" name="product_shipping_notice" after="store_language">
+            <arguments>
+            <argument name="block_id" xsi:type="string">product_shipping_notice</argument>
+            </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceBlock name="product.info.sku" remove="true" />    <!--Remove Product Sku -->
+        <referenceBlock name="view.addto.compare" remove="true" />   <!--Remove Add to Compare Link from Product Page -->
+        <referenceBlock name="product.info.mailto" remove="true" /><!--Remove Email/Mail to Link Product Page-->
+        <referenceBlock name="product.info.stock.sku" remove="true"/><!--Remove Stock from Product Page-->
+        <referenceBlock name="content.aside" remove="true"/>
+        <referenceBlock name="product.attributes" remove="true" /><!-- Remove the "More Information" tab:-->
+        <referenceBlock name="reviews.tab" remove="true" /><!-- Remove the "Reviews Tab"-->
+
+        <move element="product.info.review" destination="product.info.main" after="product.info.addtocart.additional"/><!--Move product Reviews from product.info.summary-->
+        <move element="product.info.price" destination="product.info.options.wrapper.bottom" before="product.info.addtocart.additional"/><!--Move Price after custom options product page-->
+        <move element="product.info.addto" destination="product.info.main" after="-"/>
+        <move element="product.info.overview" destination="product.info.main" after="page.main.title"/>
+        <move element="catalog.product.related" destination="content" after="-"/>
+        <move element="product_shipping_notice" destination="product.info.main" before="product.info.review"/>
+        
+    
+  </body>
+</page>

@@ -1,0 +1,12 @@
+<?php echo $this->getCategorySidebarHtml(); ?>
+
+
+<script type="text/javascript">
+ require(['jquery', 'jquery/ui'], function($){ 
+$( document ).ready(function() { 
+  $('.category-sidebar > li > a').trigger("click");
+  $('.category-sidebar > li > ul > li > a').trigger("click");
+
+ });
+});
+ </script>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Landofcoder
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Landofcoder.com license that is
+ * available through the world-wide-web at this URL:
+ * http://landofcoder.com/license
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category   Landofcoder
+ * @package    Lof_SmsNotification
+ * @copyright  Copyright (c) 2017 Landofcoder (http://www.landofcoder.com/)
+ * @license    http://www.landofcoder.com/LICENSE-1.0.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+	<menu>
+		<add id="Lof_SmsNotification::smsnotification" sortOrder="126" title="Sms Notification" module="Lof_SmsNotification" resource="Magento_Backend::smsnotification_elements" parent="Lof_All::lof_all" />  
+		<add id="Lof_SmsNotification::smslog" title="Sms Log" module="Lof_SmsNotification" sortOrder="20" parent="Lof_SmsNotification::smsnotification" action="lofsmsnotification/smslog/index" resource="Lof_SmsNotification::smslog"/>
+		<add id="Lof_SmsNotification::smsdebug" title="Sms Debug" module="Lof_SmsNotification" sortOrder="30" parent="Lof_SmsNotification::smsnotification" action="lofsmsnotification/smsdebug/index" resource="Lof_SmsNotification::smsdebug"/>
+		<add id="Lof_SmsNotification::blacklist" title="Sms Blacklist" module="Lof_SmsNotification" sortOrder="35" parent="Lof_SmsNotification::smsnotification" action="lofsmsnotification/blacklist/index" resource="Lof_SmsNotification::blacklist"/>
+		<add id="Lof_SmsNotification::phone" title="Phone Customer" module="Lof_SmsNotification" sortOrder="38" parent="Lof_SmsNotification::smsnotification" action="lofsmsnotification/phone/index" resource="Lof_SmsNotification::phone"/>
+		<add id="Lof_SmsNotification::settings" title="Configuration" module="Lof_SmsNotification" sortOrder="40" action="adminhtml/system_config/edit/section/lofsmsnotification" resource="Lof_SmsNotification::config" parent="Lof_SmsNotification::smsnotification"/>
+	</menu>
+</config>

@@ -1,0 +1,28 @@
+<?php
+$collection      = $this->getCollection();
+$total           = $collection->count();
+$blockId         = rand().time();
+$tabId           = 'formbuilder'.$blockId;
+$widget_class    = $this->getConfig('prefix_class');
+$grid_pagination = true;
+?>
+<div id="<?php echo $tabId; ?>" class="formbuilder-messages <?php echo $widget_class; ?>">
+	<div class="row lof-formbuilder">
+		<div class="formbuilder-container">
+			<?php if($total){ ?>
+			<ul>
+				<?php foreach ($collection as $_message) { ?>
+				<li><?php echo $_message->getMessage() ?></li>
+				<?php } ?>	
+			</ul>
+			<?php } else { ?>
+			<div class="message info empty">
+			<span><?php echo $block->escapeHtml(__('There are no messages yet.')); ?></span>
+			</div>
+			<?php } ?>
+		</div>
+		<?php if($grid_pagination){ ?>
+		<?php echo $this->getPagerHtml(); ?>
+		<?php } ?>
+	</div>
+</div>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                 <resource id="Magento_Backend::smsnotification_elements" title="Sms Notification"> 
+                    <resource id="Lof_SmtpSms::smslog" title="Sms Logs" sortOrder="20">
+                        <resource id="Lof_SmtpSms::smslog_delete" title="Delete Sms Log" sortOrder="30" />
+                    </resource>
+                    <resource id="Lof_SmtpSms::smsdebug" title="Sms Debugs" sortOrder="30">
+                        <resource id="Lof_SmtpSms::smsdebug_delete" title="Delete Sms Debug" sortOrder="30" />
+                    </resource>
+                    <resource id="Lof_SmtpSms::blacklist" title="Blacklist Sms" sortOrder="40">
+                         <resource id="Lof_SmtpSms::blacklist_edit" title="Edit Blacklist" sortOrder="10" />
+                        <resource id="Lof_SmtpSms::blacklist_save" title="Save Blacklist" sortOrder="20" />
+                        <resource id="Lof_SmtpSms::blacklist_delete" title="Delete Blacklist" sortOrder="30" />
+                    </resource>
+                    <resource id="Lof_SmtpSms::report" title="Report" sortOrder="70" /> 
+                </resource>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Lof_SmsNotification::config" title="Lof SmsNotification" sortOrder="1000"/>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

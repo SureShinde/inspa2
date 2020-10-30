@@ -1,0 +1,25 @@
+<?php
+$field             = $this->getData('field_data');
+$field_type        = $field['field_type'];
+$label             = $block->filterMessage($field['label']);
+$options           = $field['field_options'];
+
+$color_label       = isset($options['color_label'])?'color:'.$options['color_label'].';':'';
+$color_text        = isset($options['color_text'])?'color:'.$options['color_text'].';':'';
+$color_description = isset($options['color_description'])?'color:'.$options['color_description'].';':'';
+$background_color  = isset($options['background_color'])?'background-color:'.$options['background_color'].';':'';
+
+$font_size         = isset($options['font_size'])?'font-size:'.(int)$options['font_size'].'px;':'';
+$font_style        = isset($options['font_style'])?'font-style:'.$options['font_style'].';':'';
+$font_weight       = isset($options['font_weight'])?'font-weight:'.$options['font_weight'].';':'';
+$inlineCss         = isset($field['inline_css'])?$field['inline_css']:'';
+?>
+<div class="subtemplate-wrapper" style="<?php echo $inlineCss ?>">
+	<div class="field-section-break" style="<?php echo $background_color; ?>">
+		<div class="sm-section-break" style="<?php echo $color_text.$font_size.$font_style.$font_weight; ?>">
+			<?php if($label!=''){ ?>
+			<span><?php echo $label; ?></span>
+			<?php } ?>
+		</div>
+	</div>
+</div>

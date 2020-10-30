@@ -1,0 +1,334 @@
+<?xml version="1.0"?><!--
+/**
+ * Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.mageplaza.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_BetterSorting
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="mpbettersorting" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Better Sorting</label>
+            <tab>mageplaza</tab>
+            <resource>Mageplaza_BetterSorting::configuration</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Configuration</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Select <strong>Yes</strong> to enable this module]]></comment>
+                </field>
+                <field id="out_of_stock_end" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Show Out of Stock at the End</label>
+                    <source_model>Mageplaza\BetterSorting\Model\System\Config\Source\StockEnd</source_model>
+                    <comment><![CDATA[<strong>Inventory / Stock Options / Display Out of Stock Products</strong> must be enabled]]></comment>
+                </field>
+                <field id="sort_search_page" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Default Sort by on Search Page</label>
+                    <source_model>Mageplaza\BetterSorting\Model\System\Config\Source\SearchDefaultSort</source_model>
+                    <backend_model>Mageplaza\BetterSorting\Model\System\Config\Backend\SearchDefaultSort</backend_model>
+                </field>
+                <group id="discount" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount</label>
+                    <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Enable</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="label" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Label</label>
+                        <validate>required-entry</validate>
+                    </field>
+                    <field id="base" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Base On</label>
+                        <source_model>Mageplaza\BetterSorting\Model\System\Config\Source\DiscountBase</source_model>
+                    </field>
+                    <field id="apply" translate="label" type="multiselect" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Apply On</label>
+                        <source_model>Mageplaza\BetterSorting\Model\System\Config\Source\ApplyPages</source_model>
+                    </field>
+                    <field id="direction" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Default Sort Direction</label>
+                        <source_model>Mageplaza\BetterSorting\Model\System\Config\Source\SortDirection</source_model>
+                    </field>
+                    <field id="sort_order" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Sort Order</label>
+                        <validate>required-number validate-number validate-greater-than-zero</validate>
+                    </field>
+                </group>
+                <group id="bestseller" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Bestseller</label>
+                    <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Enable</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="label" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Label</label>
+                        <validate>required-entry</validate>
+                    </field>
+                    <field id="time_base" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Time base (days)</label>
+                        <comment>If empty, the default time base will be all-time</comment>
+                        <validate>validate-digits</validate>
+                    </field>
+                    <field id="apply" translate="label" type="multiselect" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Apply On</label>
+                        <source_model>Mageplaza\BetterSorting\Model\System\Config\Source\ApplyPages</source_model>
+                    </field>
+                    <field id="direction" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Default Sort Direction</label>
+                        <source_model>Mageplaza\BetterSorting\Model\System\Config\Source\SortDirection</source_model>
+                    </field>
+                    <field id="sort_order" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Sort Order</label>
+                        <validate>required-entry validate-digits</validate>
+                    </field>
+                </group>
+                <group id="most_viewed" translate="label" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Most Viewed</label>
+                    <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Enable</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="label" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Label</label>
+                        <validate>required-entry</validate>
+                    </field>
+                    <field id="time_base" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Time base (days)</label>
+                        <comment>If empty, the default time base will be all-time</comment>
+                        <validate>validate-digits</validate>
+                    </field>
+                    <field id="apply" translate="label" type="multiselect" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Apply On</label>
+                        <source_model>Mageplaza\BetterSorting\Model\System\Config\Source\ApplyPages</source_model>
+                    </field>
+                    <field id="direction" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Default Sort Direction</label>
+                        <source_model>Mageplaza\BetterSorting\Model\System\Config\Source\SortDirection</source_model>
+                    </field>
+                    <field id="sort_order" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Sort Order</label>
+                        <validate>required-entry validate-digits</validate>
+                    </field>
+                </group>
+                <group id="top_rated" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Top rated</label>
+                    <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Enable</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="label" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Label</label>
+                        <validate>required-entry</validate>
+                    </field>
+                    <field id="apply" translate="label" type="multiselect" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Apply On</label>
+                        <source_model>Mageplaza\BetterSorting\Model\System\Config\Source\ApplyPages</source_model>
+                    </field>
+                    <field id="direction" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Default Sort Direction</label>
+                        <source_model>Mageplaza\BetterSorting\Model\System\Config\Source\SortDirection</source_model>
+                    </field>
+                    <field id="sort_order" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Sort Order</label>
+                        <validate>required-entry validate-digits</validate>
+                    </field>
+                </group>
+                <group id="reviews_count" translate="label" type="text" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Reviews Count</label>
+                    <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Enable</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="label" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Label</label>
+                        <validate>required-entry</validate>
+                    </field>
+                    <field id="apply" translate="label" type="multiselect" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Apply On</label>
+                        <source_model>Mageplaza\BetterSorting\Model\System\Config\Source\ApplyPages</source_model>
+                    </field>
+                    <field id="direction" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Default Sort Direction</label>
+                        <source_model>Mageplaza\BetterSorting\Model\System\Config\Source\SortDirection</source_model>
+                    </field>
+                    <field id="sort_order" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Sort Order</label>
+                        <validate>required-entry validate-digits</validate>
+                    </field>
+                </group>
+                <group id="new_arrivals" translate="label" type="text" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>New Arrivals</label>
+                    <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Enable</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="label" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Label</label>
+                        <validate>required-entry</validate>
+                    </field>
+                    <field id="apply" translate="label" type="multiselect" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Apply On</label>
+                        <source_model>Mageplaza\BetterSorting\Model\System\Config\Source\ApplyPages</source_model>
+                    </field>
+                    <field id="direction" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Default Sort Direction</label>
+                        <source_model>Mageplaza\BetterSorting\Model\System\Config\Source\SortDirection</source_model>
+                    </field>
+                    <field id="sort_order" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Sort Order</label>
+                        <validate>required-entry validate-digits</validate>
+                    </field>
+                </group>
+                <group id="stock_quantity" translate="label" type="text" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Stock Quantity</label>
+                    <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Enable</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="label" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Label</label>
+                        <validate>required-entry</validate>
+                    </field>
+                    <field id="apply" translate="label" type="multiselect" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Apply On</label>
+                        <source_model>Mageplaza\BetterSorting\Model\System\Config\Source\ApplyPages</source_model>
+                    </field>
+                    <field id="direction" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Default Sort Direction</label>
+                        <source_model>Mageplaza\BetterSorting\Model\System\Config\Source\SortDirection</source_model>
+                    </field>
+                    <field id="sort_order" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Sort Order</label>
+                        <validate>required-entry validate-digits</validate>
+                    </field>
+                </group>
+                <group id="wish_list" translate="label" type="text" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Wish List</label>
+                    <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Enable</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="label" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Label</label>
+                        <validate>required-entry</validate>
+                    </field>
+                    <field id="apply" translate="label" type="multiselect" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Apply On</label>
+                        <source_model>Mageplaza\BetterSorting\Model\System\Config\Source\ApplyPages</source_model>
+                    </field>
+                    <field id="direction" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Default Sort Direction</label>
+                        <source_model>Mageplaza\BetterSorting\Model\System\Config\Source\SortDirection</source_model>
+                    </field>
+                    <field id="sort_order" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Sort Order</label>
+                        <validate>required-entry validate-digits</validate>
+                    </field>
+                </group>
+                <group id="name" translate="label" type="text" sortOrder="190" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product Name</label>
+                    <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Enable</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="label" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Label</label>
+                        <validate>required-entry</validate>
+                    </field>
+                    <field id="apply" translate="label" type="multiselect" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Apply On</label>
+                        <source_model>Mageplaza\BetterSorting\Model\System\Config\Source\ApplyPages</source_model>
+                    </field>
+                    <field id="direction" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Default Sort Direction</label>
+                        <source_model>Mageplaza\BetterSorting\Model\System\Config\Source\SortDirection</source_model>
+                    </field>
+                    <field id="sort_order" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Sort Order</label>
+                        <validate>required-entry validate-digits</validate>
+                    </field>
+                </group>
+                <group id="price" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Price</label>
+                    <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Enable</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="label" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Label</label>
+                        <validate>required-entry</validate>
+                    </field>
+                    <field id="apply" translate="label" type="multiselect" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Apply On</label>
+                        <source_model>Mageplaza\BetterSorting\Model\System\Config\Source\ApplyPages</source_model>
+                    </field>
+                    <field id="direction" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Default Sort Direction</label>
+                        <source_model>Mageplaza\BetterSorting\Model\System\Config\Source\SortDirection</source_model>
+                    </field>
+                    <field id="sort_order" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Sort Order</label>
+                        <validate>required-entry validate-digits</validate>
+                    </field>
+                </group>
+                <group id="position" translate="label" type="text" sortOrder="210" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                    <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Enable</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <frontend_model>Mageplaza\BetterSorting\Model\System\Config\Frontend\Disable</frontend_model>
+                        <comment>Only Apply For Category Page/Cannot Be Disabled</comment>
+                    </field>
+                    <field id="label" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Label</label>
+                        <validate>required-entry</validate>
+                    </field>
+                    <field id="direction" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Default Sort Direction</label>
+                        <source_model>Mageplaza\BetterSorting\Model\System\Config\Source\SortDirection</source_model>
+                    </field>
+                    <field id="sort_order" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Sort Order</label>
+                        <validate>required-entry validate-digits</validate>
+                    </field>
+                </group>
+                <group id="relevance" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Relevance</label>
+                    <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Enable</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <frontend_model>Mageplaza\BetterSorting\Model\System\Config\Frontend\Disable</frontend_model>
+                        <comment>Only Apply For Search Page/Cannot Be Disabled</comment>
+                    </field>
+                    <field id="label" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Label</label>
+                        <validate>required-entry</validate>
+                    </field>
+                    <field id="direction" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Default Sort Direction</label>
+                        <source_model>Mageplaza\BetterSorting\Model\System\Config\Source\SortDirection</source_model>
+                    </field>
+                    <field id="sort_order" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Sort Order</label>
+                        <validate>required-entry validate-digits</validate>
+                    </field>
+                </group>
+            </group>
+        </section>
+    </system>
+</config>

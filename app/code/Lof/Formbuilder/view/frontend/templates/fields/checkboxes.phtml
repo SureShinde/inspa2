@@ -1,0 +1,92 @@
+<?php
+$helper            = $this->helper("Lof\Formbuilder\Helper\Fields");
+$helper_data = $this->helper("Lof\Formbuilder\Helper\Data");
+$form              = $block->getForm();
+$form_data         = $this->getData('form_data');
+$field             = $this->getData('field_data');
+$field_type        = $field['field_type'];
+$label             = $block->filterMessage($field['label']);
+$options           = $field['field_options'];
+$inlineCss         = isset($field['inline_css'])?$field['inline_css']:'';
+$required          = $field['required'];
+$cid               = $helper_data->getFieldId($field);
+$field_name        = $helper->getFieldPrefix() . $cid . $form->getId();
+$field_id          = $field_name.uniqid();
+$available_fields  = $helper->getAvailableFields();
+$html              = '';
+$field_validate    = isset($available_fields[$field_type])?$available_fields[$field_type]:'';
+$validates         = $field_validate;
+$field_help        = isset($options['description'])?$block->filterMessage($options['description']):'';
+
+$color_label       = isset($options['color_label'])?'color:'.$options['color_label'].';':'';
+$color_text        = isset($options['color_text'])?'color:'.$options['color_text'].';':'';
+$color_description = isset($options['color_description'])?'color:'.$options['color_description'].';':'';
+$background_color  = isset($options['background_color'])?'background-color:'.$options['background_color'].';':'';
+
+$font_size         = isset($options['font_size'])?'font-size:'.(int)$options['font_size'].'px;':'';
+$font_style        = isset($options['font_style'])?'font-style:'.$options['font_style'].';':'';
+$font_weight       = isset($options['font_weight'])?'font-weight:'.$options['font_weight'].';':'';
+
+if($field_validate && is_array($field_validate)) {
+	$validates = implode(" ", $field_validate);
+}
+$include_other_option = isset($options['include_other_option'])?$options['include_other_option']:0;
+
+$gridColumn = isset($field['grid_column'])?$field['grid_column']:1;
+$total      = count($options);
+$x          = 0;
+?>
+<div class="subtemplate-wrapper" style="<?php echo $inlineCss ?>">
+	<label style="<?php echo $font_size.$font_style.$font_weight.$color_label; ?>"  for="<?php echo $field_id; ?>" class="<?php echo (1==$required)?'required':''; ?>"><?php echo __($label); ?><?php echo (1==$required)?'<em>*</em>':'';?></label>
+	<div class="input-box">
+		<div class="input-list">
+			<ul class="list-options" style="<?php echo $color_text.$background_color; ?>">
+				<?php if($options['options']) {
+					foreach($options['options'] as $key=>$val) {
+						$item_label = $val['label'];
+						$item_label_show = str_replace(array("{{", "}}"), array('<img src="{{', '}}" alt="img"/>'), $item_label);
+						$item_checked = $val['checked'];
+						if($form_data && isset($form_data[$field_name.$key]) && $form_data[$field_name.$key] == $item_label) {
+							$item_checked = true;
+						}
+						$item_label_show2 = $block->filterMessage($item_label_show);
+						if(!$include_other_option && ($key == (count($options['options']) - 1) )) { ?>
+							<div class="row">
+								<div class="col-lg-12">
+									<input type="checkbox" name="<?php echo $field_name.'[]'; ?>" id="<?php echo $field_id.$key; ?>" value="<?php echo $block->escapeQuote($item_label); ?>" class="<?php echo (1==$required)?'validate-one-required-by-name required-entry':''; ?>" <?php echo ($item_checked)?'checked="checked"':''?>/> <label for="<?php echo $field_id.$key; ?>"><?php echo __($item_label_show2); ?></label>
+								</div>
+							</div>
+							<?php } else { ?>
+								
+								<?php if( $gridColumn == 1 || $x%$gridColumn == 0){ ?>
+									<div class="row">
+								<?php } ?>
+
+								<div class="col-lg-<?php echo 12/$gridColumn ?>">
+									<input type="checkbox" name="<?php echo $field_name.'[]' ?>" id="<?php echo $field_id.$key; ?>"  value="<?php echo $block->escapeQuote($item_label); ?>" class="<?php echo (1==$required)?'validate-one-required-by-name required-entry':''; ?>" <?php echo ($item_checked)?'checked="checked"':''?>/> <label for="<?php echo $field_id.$key; ?>"><?php echo __($item_label_show2); ?></label>
+
+								</div>
+
+								<?php if( $gridColumn == 1 || ($x+1)%$gridColumn == 0 || ($x == $total-1) ) {  ?>
+									</div>
+								<?php } ?>
+								
+								<?php $x++; ?>
+
+								<?php }
+							} ?>
+							<?php if($include_other_option) { $key++;?>
+								<div class="row">
+									<div class="col-lg-12">
+										<input type="checkbox" name="<?php echo $field_name.'[]'; ?>" id="<?php echo $field_id.'_other'; ?>" title="<?php echo __('Other'); ?>" value="other" class="<?php echo (1==$required)?'validate-one-required-by-name required-entry':''; ?>"/> <label for="<?php echo $field_id.'_other'; ?>"><?php echo __("Other"); ?></label> <input name="<?php echo $field_name.'_other'; ?>" id="<?php echo $field_id.$key; ?>" title="<?php echo __("Other"); ?>" value="<?php echo $block->filterMessage(($form_data && isset($form_data[$field_name.$key]))?$form_data[$field_name.$key]:''); ?>" class="input-text" type="text" />
+									</div>
+								</div>
+								<?php } ?>
+								<?php } ?>
+							</ul>
+						</div>
+						<?php if($field_help) { ?>
+							<span class="help-block" style="<?php echo $color_description; ?>"><?php echo $field_help; ?></span>
+							<?php } ?>
+						</div>
+</div>

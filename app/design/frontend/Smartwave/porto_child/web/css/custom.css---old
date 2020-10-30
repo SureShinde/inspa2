@@ -1,0 +1,34 @@
+body .page-header.type6 .minicart-wrapper{height: auto;padding: 0px 0;top: -11px;width: 117px;}
+body .minicart-wrapper .action.showcart::before{font-size: 23px !important;float: right;}
+.header.panel > .header.links .text{font-size: 14px;position: inherit;margin: 0;padding: 0;}
+body .minicart-wrapper .action.showcart .counter.qty{text-align: left;font-weight: normal;text-transform: uppercase;}
+body .page-header.type6 .panel.header .header.links > li > a, .page-header.type6 .panel.header .header.links > li > a{color: #333;padding: 0 7px;font-size: 14px;}
+body .header.panel > .header.links > li > a{padding: 0 12px;border-left: 0px;border-right: 1px solid #333;text-transform: uppercase;}
+.header.panel > .header.links > li{margin-right: 3px;}
+/*.counter.qty.empty .counter-number1{display: none;}*/
+ @media only screen and (min-width: 768px) {
+body .page-header .header.panel{padding-bottom: 0px;}
+body .page-header.type6 .header.content{padding: 0px 15px 28px 15px;}
+}
+body .header.panel > .header.links > li strong,.customer-name{color: #333;
+font-size: 14px;font-weight: normal;}
+body .product-reviews-summary.short,.action.towishlist.actions-secondary {display: inline-block;border:0px;}
+body .product-item .product-reviews-summary{margin:0px;}
+body .product-item .rating-summary .rating-result{width: 110px;height:auto;}
+body .product-item .rating-summary .rating-result::before{height: auto;}
+body .product-item .action.towishlist{height: auto;
+line-height: 1;}
+body .product-item .rating-summary .rating-result > span::before{color: #ffc600;line-height: 18px;}
+.product-item .rating-summary .rating-result > span::before{font-size: 18px;
+height: 20px;}
+body .product-item .rating-summary .rating-result::before,.product-item .rating-summary .rating-result::before{font-size: 18px;line-height: 18px;}
+body .product-item-actions .action.towishlist:hover, body .product-addto-links .action.towishlist:hover, body .action.towishlist:hover{color: pink;}
+body .product-item-details{padding: 5px 0;}
+body .price-box{margin: 1px 0 3px;}
+.product-item-info{min-height: 340px !important;
+}
+body .product.name.product-item-name{height: 40px;overflow: hidden;display: block;}
+body #featured_product .owl-carousel .owl-item img{max-height: 202px;}
+.porto-icon-plus-squared{color: #000;}
+#search_custom_form .actions{display: none;}
+.checkout_index_index .opc-block-summary .product-item .product-item-inner{width: 90% !important}

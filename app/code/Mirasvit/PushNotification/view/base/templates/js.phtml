@@ -1,0 +1,20 @@
+<?php
+/** @var \Mirasvit\PushNotification\Block\Js $block */
+?>
+<script>
+    var PN_SERVICE_WORKER = '<?=$block->getServiceWorkerUrl() ?>';
+    var PN_SUBSCRIBE_URL = '<?=$block->getSubscribeUrl() ?>';
+    var PN_DEBUG = <?=$block->isDebugEnabled() ?>;
+
+    require(['Mirasvit_PushNotification/js/subscriber'], function(subscriber) {
+        subscriber.initialize();
+    });
+</script>
+
+<script type="text/x-magento-init">
+    <?php echo \Zend_Json_Encoder::encode($block->getJsConfig()) ?>
+</script>
+
+<div data-bind="scope: 'pushNotificationPrompt'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>

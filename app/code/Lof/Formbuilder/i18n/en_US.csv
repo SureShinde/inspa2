@@ -1,0 +1,330 @@
+"Save and Continue Edit","Save and Continue Edit"
+"Delete Blacklist","Delete Blacklist"
+"Edit Blacklist '%1'","Edit Blacklist '%1'"
+"New Blacklist","New Blacklist"
+"Blacklist Information","Blacklist Information"
+"View message","View message"
+"View form profile","View form profile"
+"IP address","IP address"
+"Email address","Email address"
+"Form Id","Form Id"
+"Message Id","Message Id"
+Note,Note
+Status,Status
+"Form Profile","Form Profile"
+Message,Message
+"Created At","Created At"
+Forms,Forms
+"Add New Form","Add New Form"
+"Export Messages to CSV","Export Messages to CSV"
+"Delete Form","Delete Form"
+"Edit Form '%1'","Edit Form '%1'"
+"New Form","New Form"
+"Save Form","Save Form"
+"Save & New","Save & New"
+"Save & Duplicate","Save & Duplicate"
+"Save & Close","Save & Close"
+"Success Message","Success Message"
+"Before Form Content","Before Form Content"
+"After Form Content","After Form Content"
+"Thank you for your message. It has been sent.","Thank you for your message. It has been sent."
+"Form Content","Form Content"
+"Form Creator","Form Creator"
+Design,Design
+"Page Layout","Page Layout"
+"Custom XML","Custom XML"
+Css,Css
+"Submit Text Color","Submit Text Color"
+minicolors,minicolors
+"Submit Background Color","Submit Background Color"
+"Submit Hover Color","Submit Hover Color"
+"Input Hover Color","Input Hover Color"
+"Form Information","Form Information"
+"Form Title","Form Title"
+Identifier,Identifier
+"Receive Notification","Receive Notification"
+"If you use multiple separate by comma. Note: when sending to many email the load time will increase","If you use multiple separate by comma. Note: when sending to many email the load time will increase"
+"%1 (Default)","%1 (Default)"
+"Email Message Template","Email Message Template"
+"Thankyou Field","Thankyou Field"
+"After submitting form successfully. A ""thank you"" email automatically send to thank you field in which customers have just submitted","After submitting form successfully. A ""thank you"" email automatically send to thank you field in which customers have just submitted"
+"Thankyou Email Template","Thankyou Email Template"
+"Sender Email Field","Sender Email Field"
+"Choose the sender email field to allow module send email from the email address field on the form, it will override the default sender on module settings. Empty to use default sender on module settings.","Choose the sender email field to allow module send email from the email address field on the form, it will override the default sender on module settings. Empty to use default sender on module settings."
+"Sender Name Field","Sender Name Field"
+"Choose the sender name field to allow module send name from the name field on the form, it will override the default sender on module settings. Empty to use default sender on module settings.","Choose the sender name field to allow module send name from the name field on the form, it will override the default sender on module settings. Empty to use default sender on module settings."
+"Submit Button Text","Submit Button Text"
+"Redirect Link","Redirect Link"
+"Show reCaptcha","Show reCaptcha"
+"Show on TopLink","Show on TopLink"
+"Customer Groups","Customer Groups"
+"Store View","Store View"
+"Custom Template","Custom Template"
+"Example: form/view.phtml, form/view2.phtml","Example: form/view.phtml, form/view2.phtml"
+"Click here","Click here"
+ID,ID
+Action,Action
+SEO,SEO
+"Page Title","Page Title"
+Keywords,Keywords
+"Meta Keywords","Meta Keywords"
+Description,Description
+"Meta Description","Meta Description"
+Messages,Messages
+Save,Save
+"Manage Forms","Manage Forms"
+"Manage Messages","Manage Messages"
+"Manage Models","Manage Models"
+"Manage Model Categories","Manage Model Categories"
+"Manage Blacklist","Manage Blacklist"
+"Manage Replies","Manage Replies"
+Settings,Settings
+Guide,Guide
+"Get Support","Get Support"
+"Delete Message","Delete Message"
+"Edit Message '%1'","Edit Message '%1'"
+"New Message","New Message"
+"Client Information","Client Information"
+"IP Address","IP Address"
+"Referring Page","Referring Page"
+"Host Name","Host Name"
+"User Agent","User Agent"
+"Reply Email","Reply Email"
+"<div style=""font-weight: bold;padding: 20px 0;"">Create At: %1</div>","<div style=""font-weight: bold;padding: 20px 0;"">Create At: %1</div>"
+"Message Information","Message Information"
+Models,Models
+"Add New Model","Add New Model"
+"Save Model","Save Model"
+"Delete Model","Delete Model"
+"Edit Model '%1'","Edit Model '%1'"
+"New Model","New Model"
+"Model Information","Model Information"
+"Model Title","Model Title"
+"-- Select a Parent --","-- Select a Parent --"
+Parent,Parent
+"-- Select a Category --","-- Select a Category --"
+Category,Category
+Position,Position
+"Model Categories","Model Categories"
+"Add New Catgory","Add New Catgory"
+"Save Category","Save Category"
+"Delete Category","Delete Category"
+"Edit Category '%1'","Edit Category '%1'"
+"New Category","New Category"
+"Category Information","Category Information"
+Name,Name
+"Please select","Please select"
+Home,Home
+"Go to Home Page","Go to Home Page"
+FormBuilder,FormBuilder
+Form,Form
+Blacklist,Blacklist
+"Don't have data to save.","Don't have data to save."
+"You saved the blacklist.","You saved the blacklist."
+"Have problem when save the blacklist.","Have problem when save the blacklist."
+"The ip or email was added to blocklist.","The ip or email was added to blocklist."
+"You deleted the blacklist.","You deleted the blacklist."
+"We can't find a blacklist to delete.","We can't find a blacklist to delete."
+"This blacklist no longer exists.","This blacklist no longer exists."
+"Edit Blacklist","Edit Blacklist"
+"Black list","Black list"
+"A total of %1 record(s) have been deleted.","A total of %1 record(s) have been deleted."
+"Missing email or ip. You should input one of them.","Missing email or ip. You should input one of them."
+"You deleted the form.","You deleted the form."
+"We can't find a form to delete.","We can't find a form to delete."
+"This form no longer exists.","This form no longer exists."
+"Edit Form","Edit Form"
+"Please correct the data sent.","Please correct the data sent."
+"You saved the form.","You saved the form."
+"You duplicated this form.","You duplicated this form."
+"Something went wrong while duplicating the form.","Something went wrong while duplicating the form."
+"You saved the reply message.","You saved the reply message."
+"Have problem when save the reply message.","Have problem when save the reply message."
+"Email was successfully sent.","Email was successfully sent."
+"We can't process your request right now. Sorry, that's all we know.","We can't process your request right now. Sorry, that's all we know."
+"You deleted the message.","You deleted the message."
+"We can't find a message to delete.","We can't find a message to delete."
+"This message no longer exists.","This message no longer exists."
+"Edit Message","Edit Message"
+"You saved the message.","You saved the message."
+"You deleted the model.","You deleted the model."
+"We can't find a model to delete.","We can't find a model to delete."
+"This model no longer exists.","This model no longer exists."
+"Edit Model","Edit Model"
+Model,Model
+"You saved the model.","You saved the model."
+Modelcategory,Modelcategory
+"You deleted the category.","You deleted the category."
+"We can't find a category to delete.","We can't find a category to delete."
+"This category no longer exists.","This category no longer exists."
+"Edit Category","Edit Category"
+Categories,Categories
+"You saved the category.","You saved the category."
+Reply,Reply
+"You deleted the replies.","You deleted the replies."
+"We can't find a replies to delete.","We can't find a replies to delete."
+"Message Reply list","Message Reply list"
+"Select a option","Select a option"
+"Your IP was blocked in our blacklist. So, we will not allow submit the form.","Your IP was blocked in our blacklist. So, we will not allow submit the form."
+"Please check reCaptcha and try again.","Please check reCaptcha and try again."
+". ' - The file is too big.'",". ' - The file is too big.'"
+"One or more emails in form were blocked in our blacklist. So, we will not allow submit the form.","One or more emails in form were blocked in our blacklist. So, we will not allow submit the form."
+"An error when send email. We can't process your request right now. Sorry, that's all we know.","An error when send email. We can't process your request right now. Sorry, that's all we know."
+"Errors when send emails. We can't process your request right now. Sorry, that's all we know.","Errors when send emails. We can't process your request right now. Sorry, that's all we know."
+"An error when send thanks you email. We can't process your request right now. Sorry, that's all we know.","An error when send thanks you email. We can't process your request right now. Sorry, that's all we know."
+"Errors when send thanks you emails. We can't process your request right now. Sorry, that's all we know.","Errors when send thanks you emails. We can't process your request right now. Sorry, that's all we know."
+"An error when send a thanks you email. We can't process your request right now. Sorry, that's all we know.","An error when send a thanks you email. We can't process your request right now. Sorry, that's all we know."
+"An error when send a thanks you emails. We can't process your request right now. Sorry, that's all we know.","An error when send a thanks you emails. We can't process your request right now. Sorry, that's all we know."
+"Please Select","Please Select"
+"State / Province / Region","State / Province / Region"
+"Page not found.","Page not found."
+"Form Messages","Form Messages"
+Blocked,Blocked
+"Un Blocked","Un Blocked"
+Bootstrap,Bootstrap
+Foundation,Foundation
+dd/mm/yyyy,dd/mm/yyyy
+mm/dd/yyyy,mm/dd/yyyy
+mm-dd-yy,mm-dd-yy
+Popup,Popup
+Animation,Animation
+"Button Link","Button Link"
+"Show on current page","Show on current page"
+List,List
+Grid,Grid
+"Slide 1","Slide 1"
+Left,Left
+Right,Right
+"Make sure that static form content does not reference the form itself.","Make sure that static form content does not reference the form itself."
+Enabled,Enabled
+Disabled,Disabled
+Yes,Yes
+No,No
+"Latitude: %1","Latitude: %1"
+"Longtitude: %1","Longtitude: %1"
+"%1 stars","%1 stars"
+"Price: %1","Price: %1"
+Sent,Sent
+"Un Sent","Un Sent"
+"A form identifier with the same properties already exists in the selected store.","A form identifier with the same properties already exists in the selected store."
+Edit,Edit
+"All Store Views","All Store Views"
+Delete,Delete
+Email,Email
+Ip,Ip
+"Created Date","Created Date"
+Whitelist,Whitelist
+"Block Email","Block Email"
+"Select Email","Select Email"
+"Block Ip","Block Ip"
+"Add To Blacklist","Add To Blacklist"
+"Ajax posting data...","Ajax posting data..."
+"List email reply","List email reply"
+"Email From","Email From"
+"Email To","Email To"
+Subject,Subject
+"Message Content","Message Content"
+"Error Message","Error Message"
+UnSent,UnSent
+"Reply Information","Reply Information"
+"Send Email","Send Email"
+"Note: You must fill in all fields before submit button Send Email!","Note: You must fill in all fields before submit button Send Email!"
+"Reply is sending...","Reply is sending..."
+"There are no messages yet.","There are no messages yet."
+"Submited At","Submited At"
+Address,Address
+City,City
+Zipcode,Zipcode
+"-- Please Select --","-- Please Select --"
+Country,Country
+"Address 2","Address 2"
+Other,Other
+"Select Date","Select Date"
+Location:,Location:
+Radius:,Radius:
+Pos,Pos
+HH,HH
+MM,MM
+SS,SS
+AM,AM
+PM,PM
+"* Required Fields","* Required Fields"
+Submit,Submit
+"%1 Item(s)","%1 Item(s)"
+"Hide Price","Hide Price"
+"Product ID","Product ID"
+"A new message of","A new message of"
+%name,%name
+"The form was submited from the link:","The form was submited from the link:"
+"Thank you for your message!","Thank you for your message!"
+"Your submitted message as this:","Your submitted message as this:"
+"We will check and reply you very soon!","We will check and reply you very soon!"
+"<a href=""http://landofcoder.com"" target=""_BLANK"" title=""""Magento Marketplace, Opencart Marketplace, Magento 2 Extension, Free Magento Extension, Opencart Advanced Reports"">landofcoder.com</a>","<a href=""http://landofcoder.com"" target=""_BLANK"" title=""""Magento Marketplace, Opencart Marketplace, Magento 2 Extension, Free Magento Extension, Opencart Advanced Reports"">landofcoder.com</a>"
+Formbuilder,Formbuilder
+"General Settings","General Settings"
+"Enabled Check Blacklist","Enabled Check Blacklist"
+Route,Route
+"Add Your extension at end of Link, for example: http://domain.com/route/FORM_IDENTIFIER","Add Your extension at end of Link, for example: http://domain.com/route/FORM_IDENTIFIER"
+"Date Format","Date Format"
+"Full: Tuesday, April 12, 1952 AD or 3:30:42pm PST<br/>LONG: January 12, 1952 or 3:30:32pm<br/>MEDIUM: Jan 12, 1952<br/>SHORT: 12/13/52 or 3:30pm","Full: Tuesday, April 12, 1952 AD or 3:30:42pm PST<br/>LONG: January 12, 1952 or 3:30:32pm<br/>MEDIUM: Jan 12, 1952<br/>SHORT: 12/13/52 or 3:30pm"
+"Google reCaptcha","Google reCaptcha"
+"ReCAPTCHA Site Key","ReCAPTCHA Site Key"
+"ReCAPTCHA Secret Key","ReCAPTCHA Secret Key"
+"Enabled Debug Log","Enabled Debug Log"
+"Email Settings","Email Settings"
+"Email Sender","Email Sender"
+"Allow send thanks you email","Allow send thanks you email"
+"Enable/Disable send thanks you email after submit form - for all form profiles.","Enable/Disable send thanks you email after submit form - for all form profiles."
+"Allow send thanks you email for all email fields","Allow send thanks you email for all email fields"
+"Enable/Disable send thanks you email after submit form - for all form profiles with all email address in form fields have type 'email'.","Enable/Disable send thanks you email after submit form - for all form profiles with all email address in form fields have type 'email'."
+"Auto add emails to newsletter subscription","Auto add emails to newsletter subscription"
+"Enable/Disable auto get all emails from form's fields then add to newsletter subscription list of magento 2.","Enable/Disable auto get all emails from form's fields then add to newsletter subscription list of magento 2."
+"Field Templates","Field Templates"
+"Google API","Google API"
+"Public Key","Public Key"
+"Lof Formbuilder: Form","Lof Formbuilder: Form"
+Title,Title
+"Title Color","Title Color"
+"Input color name or color code. Example: #CC0000, white,...","Input color name or color code. Example: #CC0000, white,..."
+"Prefix Class","Prefix Class"
+"Display Type","Display Type"
+"Icon Color","Icon Color"
+"Icon Background Color","Icon Background Color"
+Width(px),Width(px)
+"Button Text","Button Text"
+"Popup Width","Popup Width"
+"Popup Height","Popup Height"
+"Show after X seconds page is loaded","Show after X seconds page is loaded"
+"Show By Cookie","Show By Cookie"
+"Frame Work Css","Frame Work Css"
+"Show Text Before Form","Show Text Before Form"
+"Show Text After Form","Show Text After Form"
+Template,Template
+"Lof Formbuilder: Get Form Messages","Lof Formbuilder: Get Form Messages"
+"Get messages from a form","Get messages from a form"
+"Number Item","Number Item"
+"Input custom module template file path. For example: <b>Lof_Formbuilder::widget/style1.phtml</b>. Empty for default","Input custom module template file path. For example: <b>Lof_Formbuilder::widget/style1.phtml</b>. Empty for default"
+"Number Item Per Page","Number Item Per Page"
+"Grid Pagination","Grid Pagination"
+"Add New Blacklist","Add New Blacklist"
+"Delete items","Delete items"
+"Are you sure you wan't to delete selected items?","Are you sure you wan't to delete selected items?"
+"Form Name","Form Name"
+"Updated At","Updated At"
+Created,Created
+Modified,Modified
+"Store View Id","Store View Id"
+"Layout Update Xml","Layout Update Xml"
+"Email Receive","Email Receive"
+"Thanks Email Template","Thanks Email Template"
+"Email Template","Email Template"
+"Show Captcha","Show Captcha"
+"Show Toplink","Show Toplink"
+"Form Data","Form Data"
+Params,Params
+"Ip Address","Ip Address"
+"Customer Id","Customer Id"
+"Product Id","Product Id"
+"Add New Category","Add New Category"
+Error,Error
+"LOF Formbuilder","LOF Formbuilder"

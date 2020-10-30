@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Mirasvit_PushNotification::push_notification" title="Push Notifications"
+             module="Mirasvit_PushNotification"
+             resource="Mirasvit_PushNotification::push_notification" sortOrder="15" parent="Magento_Backend::marketing"
+        />
+
+        <add id="Mirasvit_PushNotification::push_notification_notification" title="Notifications"
+             module="Mirasvit_PushNotification" resource="Mirasvit_PushNotification::push_notification_notification"
+             action="push_notification/notification" parent="Mirasvit_PushNotification::push_notification"
+        />
+
+        <add id="Mirasvit_PushNotification::push_notification_subscriber" title="Subscribers"
+             module="Mirasvit_PushNotification" resource="Mirasvit_PushNotification::push_notification_subscriber"
+             action="push_notification/subscriber" parent="Mirasvit_PushNotification::push_notification"
+        />
+
+        <add id="Mirasvit_PushNotification::push_notification_template" title="Templates"
+             module="Mirasvit_PushNotification" resource="Mirasvit_PushNotification::push_notification_template"
+             action="push_notification/template" parent="Mirasvit_PushNotification::push_notification"
+        />
+
+        <add id="Mirasvit_PushNotification::push_notification_prompt" title="Prompts"
+             module="Mirasvit_PushNotification" resource="Mirasvit_PushNotification::push_notification_prompt"
+             action="push_notification/prompt" parent="Mirasvit_PushNotification::push_notification"
+        />
+    </menu>
+</config>

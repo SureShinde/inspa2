@@ -1,0 +1,30 @@
+<div class="push-notification__template-preview">
+    <div class="preview-container">
+        <div class="preview-window">
+            <div class="left-column">
+                <div class="icon-container">
+                    <!-- ko if: iconUrl -->
+                    <img data-bind="attr: {src: iconUrl}"/>
+                    <!-- /ko -->
+                </div>
+            </div>
+            <div class="right-column">
+                <div class="subject-container" data-bind="text: subject"></div>
+                <div class="body-container" data-bind="text: body"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="test-block">
+        <button data-bind="click: handleSend, visible: sendState() == 0" class="secondary">
+            <i class="fa fa-fw fa-paper-plane-o" data-bind="visible: sendState() == 0"></i> <span
+                data-bind="text: sendText"></span>
+        </button>
+
+        <div class="success-block" data-bind="visible: sendState() > 0">
+            <i class="fa fa-fw fa-spinner fa-spin" data-bind="visible: sendState() == 1"></i>
+            <i class="fa fa-fw fa-check" data-bind="visible: sendState() == 2"></i>
+            <span data-bind="text: sendText"></span>
+        </div>
+    </div>
+</div>

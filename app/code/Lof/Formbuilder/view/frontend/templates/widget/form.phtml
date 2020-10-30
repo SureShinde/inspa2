@@ -1,0 +1,317 @@
+<?php
+$style                   = '';
+$helper                  = $this->helper("Lof\Formbuilder\Helper\Data");
+$route 					 = $helper->getConfig('general_settings/route');
+$submitRoute 			 = !empty($route)?($route.'SubmitForm'):'formbuilder/form/post';
+$form                    = $block->getCurrentForm();
+$fields                  = $form->getFields(); 
+$tmpFields = [];
+if($fields) {
+foreach ($fields as &$_field) {
+	if (isset($tmpFields[$_field['cid']])) {
+		$_field['cid'] = $_field['cid'] . uniqid();
+	}
+	$tmpFields[$_field['cid']] = $_field;
+}
+$modId                   = time() . rand();
+$reCaptchaPublicKey      = $block->getConfig("general_settings/captcha_publickey");
+$reCaptchaPrivateKey     = $block->getConfig("general_settings/captcha_privatekey");
+$before_form_content     = $helper->filter($form->getData('before_form_content'));
+$after_form_content      = $helper->filter($form->getData('after_form_content'));
+
+$submit_text_color       = $form->getSubmitTextColor();
+$submit_background_color = $form->getSubmitBackgroundColor();
+$submit_hover_color      = $form->getSubmitHoverColor();
+$input_hover_color       = $form->getInputHoverColor();
+
+
+$frame_work_css			 = $this->getData('frame_work_css');
+$button_text             = $this->getData('button_text');
+$show_text_before        = $this->getData('show_text_before');
+$show_text_after         = $this->getData('show_text_after');
+$prefix_class            = $this->getData('prefix_class');
+$display_type            = $this->getData('display_type');
+$popup_width             = $this->getData('popup_width');
+$popup_height            = $this->getData('popup_height');
+$title                   = $this->getData('title');
+$show_after              = (int)$this->getData('show_after');
+$width                   = (int)$this->getData('width');
+$show_cookietime         = $this->getData('show_cookietime');
+$position                = $this->getData('position');
+$title_color             = $this->getData('title_color');
+$icon_color              = $this->getData('icon_color');
+$icon_bgcolor            = $this->getData('icon_bgcolor');
+$iconStyle = '';
+if($icon_color){
+	$iconStyle .= 'color: ' . $icon_color . ';';
+}
+if($icon_bgcolor){
+	$iconStyle .= 'background-color: ' . $icon_bgcolor . ';';
+}
+if($iconStyle) $iconStyle = 'style="' . $iconStyle . '"';
+
+$blockId = time() . rand();
+if ($display_type == 'popup' || $display_type =='link') $style .= 'display: none;';
+	if (!$width) $width = 600;
+	if ($width && $display_type =='animation') {
+		$style .= 'width: ' . $width . 'px;';
+		if($position == 'right'){
+			$style .= 'right: -' . ($width*2) . 'px';
+		} else {
+			$style .= 'left: -' . ($width*2) . 'px';
+		}
+	}
+	if ($style!='') $style = 'style="' . $style . '"';
+	$asset_repository = $this->assetRepository;
+	$foundation = '';
+	if ($frame_work_css	== 'foundation') {
+		$css_asset  = $asset_repository->createAsset('Lof_Formbuilder::css/foundation-tiny.css');
+		$medium     = 'columns medium-';
+		$foundation = 'form-foundation';
+		?>
+		<link href="<?php echo $css_asset->getUrl(); ?>" rel="stylesheet" type="text/css" />
+		<?php } else {
+			$medium = 'col-sm-';
+		} ?>
+		<?php $showCaptcha = $form->getShowCaptcha(); ?>
+
+		<?php if($display_type == 'link' || $display_type == 'popup'){ ?>
+		<a href="#" class="btnfancy" id="lofform<?php echo $modId ?>-link"><?php echo $button_text ?></a>
+		<?php } ?>
+		<div id="lofform<?php echo $modId ?>" class="<?php echo $foundation; ?> formbuilder-form <?php if($display_type == 'animation') { echo 'animation animation-' . $position; }?> <?php echo $prefix_class ?>" <?php echo $style ?>>
+			<?php if($display_type == 'animation') { ?>
+			<div class="panelbutton" <?php echo $iconStyle; ?>>
+				<i class="fa fa-envelope-o"></i>
+			</div>
+			<?php } ?>
+			<div class="form-content">
+				<?php if($title){ ?><h2 class="text-center" <?php if($title_color){ ?>style="color: <?php echo $title_color ?>"<?php }?>><?php echo $title ?></h2><?php } ?>
+					<?php if($show_text_before && ($before_form_content!='')){ ?>
+					<div class="before-form-content">
+						<?php echo $before_form_content; ?>
+					</div>
+					<?php } ?>
+					<div class="formbuilder-loading"></div>
+					<form id="formbuilder<?php echo $modId ?>" class="formbuilder form" action="<?php $this->getUrl('form/view')?>" id="formbuilder-form<?php echo $modId ?>" method="post" data-hasrequired="<?php echo __('* Required Fields') ?>" data-mage-init='{"validation":{}}' enctype="multipart/form-data">
+						<input type="hidden" name="formId" value="<?php echo $form->getId(); ?>"/>
+						<input type="hidden" name="return_url" value="<?php echo $form->getRedirectLink()?$form->getRedirectLink():$block->getCurrentUrl() ?>"/>
+						<input type="hidden" name="current_url" value="<?php echo $block->getCurrentUrl() ?>"/>
+						<input name="hideprice_id" id="hideprice_id<?php echo $modId ?>" title="<?php echo __('Hide Price') ?>" class="input-text" type="hidden" />
+						<input name="entity_id" id="entity_id<?php echo $modId ?>" title="<?php echo __('Product ID') ?>" class="input-text" type="hidden" />
+						<?php if($fields){ ?>
+						<div class="form-list row">
+							<?php foreach($fields as $field) {
+								if(!empty($form->getFrameWorkCss())) {
+									$field['frame_work_css'] = $frame_work_css;
+								}
+
+								$style = '';
+								if (isset($field['is_hidden_field']) && $field['is_hidden_field']==1) {
+									$style = 'style="height:0; display:none; margin: 0;"';
+								}
+								?>
+								<div <?php echo $style ?> class="field <?php echo isset($field['wrappercol'])?$medium.$field['wrappercol']:$medium.'12'; ?> <?php if($field['field_type'] == 'section_break' && $field['show_breakline']==2){ echo 'hidden'; } ?>">
+									<div class="response-field-<?php echo $field['field_type'] ?>">
+										<?php echo $block->getField($form, $field['field_type'], $field); ?>
+									</div>
+								</div>
+								<?php } ?>
+								<?php if ($showCaptcha){ ?>
+								<div class="field <?php echo $medium; ?>12"><div id="form-recaptchap<?php echo $blockId ?>"></div></div>
+								<?php } ?>
+
+							</div>
+							<?php } ?>
+							<div class="row">
+								<?php $submit_button_text = $form->getSubmitButtonText(); ?>
+								<div class="buttons-set <?php echo $medium; ?>12">
+									
+									<button type="submit" title="<?php echo __('Submit') ?>" style="<?php echo isset($submit_text_color)?'color:'.$submit_text_color.';':' '; ?><?php echo isset($submit_background_color)?'background-color:'.$submit_background_color.';':' '; ?> " class="formbuilder-button button"><span><span>
+										<?php if($submit_button_text) { ?>
+										<?php echo __($submit_button_text); ?>
+										<?php } else { ?>
+										<?php echo __('Submit') ?>
+										<?php } ?>
+									</span></span></button>
+								</div>
+							</div>
+						</form>
+
+						<?php if($show_text_after && ($after_form_content!='')){ ?>
+						<div class="before-form-content">
+							<?php echo $after_form_content; ?>
+						</div>
+						<?php } ?>
+					</div>	
+				</div>
+				<style>
+				#lofform<?php echo $modId ?> .formbuilder button[type="submit"]:hover {
+					<?php echo isset($submit_hover_color)?'background-color:'.$submit_hover_color.'!important;':' '; ?>
+				}
+				#lofform<?php echo $modId ?> .form-content  input:hover,
+				#lofform<?php echo $modId ?> .form-content .input-box:hover textarea  {
+					<?php echo isset($input_hover_color)?'border-color:'.$input_hover_color.'!important;':' '; ?>
+				}
+			</style>
+			<script type="text/javascript">
+				require([
+					'jquery',
+					'Lof_Formbuilder/js/jquery.cookie',
+					<?php if($display_type == 'link' || $display_type == 'popup'){ ?>
+					<?php if ($this->helper("Lof\All\Helper\Data")->getConfig("enable_fancybox")){ ?>
+					'Lof_All/lib/fancybox/jquery.fancybox.pack',
+					<?php 
+					}
+					}
+					?>
+					'mage/validation'
+					], function($){
+							jQuery(document).ready(function($) {
+								<?php if($width && $display_type =='animation'){ ?>
+									var blockWidth = $('#lofform<?php echo $modId ?>').outerWidth() + 3;
+									<?php if($position == 'left'){ ?>
+										$('#lofform<?php echo $modId ?>').css({'left':'-' + blockWidth + 'px'});
+										<?php } ?>
+										<?php if($position == 'right'){ ?>
+											$('#lofform<?php echo $modId ?>').css({'right':'-' + (blockWidth+2) + 'px'});
+											<?php } ?>
+											<?php } ?>
+
+											<?php if($display_type == 'link' || $display_type == 'popup'){ ?>
+												jQuery("#lofform<?php echo $modId ?>-link").fancybox({
+													'href'   : '#lofform<?php echo $modId ?>',
+													'titleShow'  : false,
+													'transitionIn'  : 'elastic',
+													'transitionOut' : 'elastic',
+													<?php if((int)$popup_width>0){ ?>'maxWidth': '<?php echo $popup_width ?>',<?php } ?>
+													<?php if((int)$popup_height>0){ ?>'maxHeight': '<?php echo $popup_height ?>',<?php } ?>
+												});
+												<?php } ?>
+			<?php if($display_type == 'popup'){ ?>
+					<?php if((int)$show_cookietime > 0){ ?>
+						if (jQuery.cookie('form_status') != '1') {
+							<?php } ?>
+					setTimeout(function(){
+						jQuery('#lofform<?php echo $modId ?>-link').trigger("click");
+					}, <?php echo $show_after ?>);
+					<?php if((int)$show_cookietime > 0){ ?>
+						jQuery.cookie('form_status', '1', { expires: <?php echo (int)$show_cookietime ?>});
+					}
+					<?php } ?>
+				<?php } elseif($display_type == 'animation') { ?>
+					jQuery("#lofform<?php echo $modId ?> .panelbutton").click( function(){
+						jQuery(this).parent().toggleClass("active");
+					} );
+					<?php } ?>	
+					<?php if((int)$show_cookietime > 0 && $display_type == 'popup'){ ?>
+					jQuery('#formbuilder<?php echo $modId ?>').validation().submit(function(){
+						jQuery.cookie('form_status', '1', { expires: 720 });
+					});
+					<?php } ?>
+
+					<?php if($width && $display_type =='animation'){ ?>
+						var orgFormWidth = $('#lofform<?php echo $modId ?>').outerWidth();
+						var orgRight = (blockWidth+2);
+						$(window).on("resize", function(){
+							var formHeight = $('#lofform<?php echo $modId ?>').height();
+							var newFormWidth = $('#lofform<?php echo $modId ?>').outerWidth() + 35;
+							var formP = $('#lofform<?php echo $modId ?>').position().top;
+							if($(window).height() < (formHeight + formP)){
+								$('#lofform<?php echo $modId ?> .form-content').css({'overflow': 'scroll','height':'100%'});
+								$('#lofform<?php echo $modId ?>').css({'height':($(window).height()-formP-10)+'px'});
+							} else {
+								$('#lofform<?php echo $modId ?> .form-content').css({'overflow': ''});
+								$('#lofform<?php echo $modId ?>').css({'height':''});
+							}
+							if($(window).width() < newFormWidth){
+								<?php if($position == 'right'){ ?>
+									$('#lofform<?php echo $modId ?>').css({'width':($(window).width()-50)+'px','right':'-'+newFormWidth+'px'});
+									<?php } ?>
+									<?php if($position == 'left'){ ?>
+										$('#lofform<?php echo $modId ?>').css({'width':($(window).width()-50)+'px','left':'-'+newFormWidth+'px'});
+										<?php } ?>
+									}else{
+										<?php if($position == 'right'){ ?>
+											$('#lofform<?php echo $modId ?>').css({'width':orgFormWidth+'px','right':'-'+blockWidth+'px'});
+											<?php } ?>
+											<?php if($position == 'left'){ ?>
+												$('#lofform<?php echo $modId ?>').css({'width':orgFormWidth+'px','left':'-'+blockWidth+'px'});			
+												<?php } ?>
+											}
+
+										}).resize();
+						<?php } ?>
+
+					   <?php if ($showCaptcha) { ?>
+						var widgetId<?php echo $blockId ?> = '';
+						var recaptchaScript = document.createElement('script');
+						recaptchaScript.src = 'https://www.google.com/recaptcha/api.js?onload=lofICaptchaOnloadCallback<?php echo $blockId ?>';
+						recaptchaScript.attributes = 'async defer';
+						document.body.appendChild(recaptchaScript);
+						window.lofICaptchaOnloadCallback<?php echo $blockId ?> = function () {
+							widgetId<?php echo $blockId ?> = grecaptcha.render('form-recaptchap<?php echo $blockId ?>', {
+								'sitekey' : '<?php echo $reCaptchaPublicKey; ?>'
+							});
+						}
+						<?php } ?>
+
+						jQuery('.response-field-html').parents('.field').css("min-height","0px");
+						jQuery('#formbuilder<?php echo $modId ?>').submit(function(e){
+							e.preventDefault();
+							if(jQuery(this).validation('isValid') == true) {
+								jQuery('.formbuilder-loading').addClass('ajax-loading');       				
+								ajaxurl  =  '<?php echo $this->getFormUrl($submitRoute); ?>';
+
+								var formData = new FormData(this);
+								if(jQuery(this).find("input:file").length > 0) {
+		        					jQuery(this).find("input:file").each(function(){
+		        						if(jQuery(this).val() === "") {
+									        formData.delete(jQuery(this).attr("name"));
+									    }
+		        					})
+		        				}
+							jQuery.ajax({
+								url: ajaxurl,
+								type:'POST',
+								dataType: 'json',
+				                data: formData, // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+								contentType: false,       // The content type used when sending data to the server.
+								cache: false,             // To unable request pages to be cached
+								processData:false,        // To send DOMDocument or non processed data file it is set to false
+								success: function(data) {
+									<?php if($redirectLink = $form->getData('redirect_link')){ ?>
+										if(data && (typeof(data.status) !== "undefined") && (data.status == 1 || data.status == 'true' || data.status == true)) {
+											window.location.href = '<?php echo $helper->filter($redirectLink); ?>';
+										}
+										<?php } ?>
+										$('#formbuilder<?php echo $modId ?>')[0].reset();
+										$("html, body").animate({ scrollTop: 0 }, "slow");
+										jQuery('.formbuilder-loading').removeClass('ajax-loading');
+										<?php if ($showCaptcha) { ?>
+											grecaptcha.reset(widgetId<?php echo $blockId ?>);
+											<?php } ?>
+
+										if($('#formbuilder<?php echo $modId ?>').find(".list-unstyled > .media").length > 0) {
+				                		$('#formbuilder<?php echo $modId ?>').find(".list-unstyled > .media").remove();
+				                		$('#formbuilder<?php echo $modId ?>').find(".list-unstyled > .text-muted").show();
+				                		if($('#formbuilder<?php echo $modId ?>').find(".dm-uploader .input-multi-upload-files.required-entry-old").length > 0){
+
+				                			$('#formbuilder<?php echo $modId ?>').find(".dm-uploader .input-multi-upload-files.required-entry-old").each(function(){
+				                				$(this).removeClass("required-entry-old");
+				                				$(this).addClass("required-entry");
+				                			})
+				                		}
+				                		
+				                	}
+				                	<?php if($display_type == 'link' || $display_type == 'popup'){ ?>
+				                	parent.jQuery.fancybox.close();
+				                	jQuery("a.fancybox-close").trigger("click"); 
+				                	<?php } ?>
+								} //End success function
+							});
+							}    
+						});
+					});
+});
+</script>
+<?php } ?>

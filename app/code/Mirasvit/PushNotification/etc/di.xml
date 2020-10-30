@@ -1,0 +1,132 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!--DATA-->
+    <preference for="Mirasvit\PushNotification\Api\Data\SubscriberInterface"
+                type="Mirasvit\PushNotification\Model\Subscriber"/>
+    <preference for="Mirasvit\PushNotification\Api\Data\TemplateInterface"
+                type="Mirasvit\PushNotification\Model\Template"/>
+    <preference for="Mirasvit\PushNotification\Api\Data\MessageInterface"
+                type="Mirasvit\PushNotification\Model\Message"/>
+    <preference for="Mirasvit\PushNotification\Api\Data\NotificationInterface"
+                type="Mirasvit\PushNotification\Model\Notification"/>
+    <preference for="Mirasvit\PushNotification\Api\Data\PromptInterface"
+                type="Mirasvit\PushNotification\Model\Prompt"/>
+
+    <!--REPOSITORY-->
+    <preference for="Mirasvit\PushNotification\Api\Repository\SubscriberRepositoryInterface"
+                type="Mirasvit\PushNotification\Repository\SubscriberRepository"/>
+    <preference for="Mirasvit\PushNotification\Api\Repository\TemplateRepositoryInterface"
+                type="Mirasvit\PushNotification\Repository\TemplateRepository"/>
+    <preference for="Mirasvit\PushNotification\Api\Repository\MessageRepositoryInterface"
+                type="Mirasvit\PushNotification\Repository\MessageRepository"/>
+    <preference for="Mirasvit\PushNotification\Api\Repository\NotificationRepositoryInterface"
+                type="Mirasvit\PushNotification\Repository\NotificationRepository"/>
+    <preference for="Mirasvit\PushNotification\Api\Repository\PromptRepositoryInterface"
+                type="Mirasvit\PushNotification\Repository\PromptRepository"/>
+
+    <!--SERVICE-->
+    <preference for="Mirasvit\PushNotification\Api\Service\SubscriberServiceInterface"
+                type="Mirasvit\PushNotification\Service\SubscriberService"/>
+    <preference for="Mirasvit\PushNotification\Api\Service\TemplateServiceInterface"
+                type="Mirasvit\PushNotification\Service\TemplateService"/>
+    <preference for="Mirasvit\PushNotification\Api\Service\PushServiceInterface"
+                type="Mirasvit\PushNotification\Service\PushService"/>
+    <preference for="Mirasvit\PushNotification\Api\Service\MessageServiceInterface"
+                type="Mirasvit\PushNotification\Service\MessageService"/>
+    <preference for="Mirasvit\PushNotification\Api\Service\NotificationServiceInterface"
+                type="Mirasvit\PushNotification\Service\NotificationService"/>
+    <preference for="Mirasvit\PushNotification\Api\Service\PromptServiceInterface"
+                type="Mirasvit\PushNotification\Service\PromptService"/>
+
+
+    <!--Entity Manager-->
+    <type name="Magento\Framework\EntityManager\MetadataPool">
+        <arguments>
+            <argument name="metadata" xsi:type="array">
+                <item name="Mirasvit\PushNotification\Api\Data\SubscriberInterface" xsi:type="array">
+                    <item name="entityTableName" xsi:type="const">Mirasvit\PushNotification\Api\Data\SubscriberInterface::TABLE_NAME</item>
+                    <item name="identifierField" xsi:type="const">Mirasvit\PushNotification\Api\Data\SubscriberInterface::ID</item>
+                </item>
+                <item name="Mirasvit\PushNotification\Api\Data\TemplateInterface" xsi:type="array">
+                    <item name="entityTableName" xsi:type="const">Mirasvit\PushNotification\Api\Data\TemplateInterface::TABLE_NAME</item>
+                    <item name="identifierField" xsi:type="const">Mirasvit\PushNotification\Api\Data\TemplateInterface::ID</item>
+                </item>
+                <item name="Mirasvit\PushNotification\Api\Data\MessageInterface" xsi:type="array">
+                    <item name="entityTableName" xsi:type="const">Mirasvit\PushNotification\Api\Data\MessageInterface::TABLE_NAME</item>
+                    <item name="identifierField" xsi:type="const">Mirasvit\PushNotification\Api\Data\MessageInterface::ID</item>
+                </item>
+                <item name="Mirasvit\PushNotification\Api\Data\NotificationInterface" xsi:type="array">
+                    <item name="entityTableName" xsi:type="const">Mirasvit\PushNotification\Api\Data\NotificationInterface::TABLE_NAME</item>
+                    <item name="identifierField" xsi:type="const">Mirasvit\PushNotification\Api\Data\NotificationInterface::ID</item>
+                </item>
+                <item name="Mirasvit\PushNotification\Api\Data\PromptInterface" xsi:type="array">
+                    <item name="entityTableName" xsi:type="const">Mirasvit\PushNotification\Api\Data\PromptInterface::TABLE_NAME</item>
+                    <item name="identifierField" xsi:type="const">Mirasvit\PushNotification\Api\Data\PromptInterface::ID</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\EntityManager\HydratorPool">
+        <arguments>
+            <argument name="hydrators" xsi:type="array">
+                <item name="Mirasvit\PushNotification\Api\Data\SubscriberInterface" xsi:type="string">Magento\Framework\EntityManager\AbstractModelHydrator</item>
+                <item name="Mirasvit\PushNotification\Api\Data\TemplateInterface" xsi:type="string">Magento\Framework\EntityManager\AbstractModelHydrator</item>
+                <item name="Mirasvit\PushNotification\Api\Data\MessageInterface" xsi:type="string">Magento\Framework\EntityManager\AbstractModelHydrator</item>
+                <item name="Mirasvit\PushNotification\Api\Data\NotificationInterface" xsi:type="string">Magento\Framework\EntityManager\AbstractModelHydrator</item>
+                <item name="Mirasvit\PushNotification\Api\Data\PromptInterface" xsi:type="string">Magento\Framework\EntityManager\AbstractModelHydrator</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!--Subscribe to events-->
+    <type name="Mirasvit\Mq\Api\Repository\ConsumerRepositoryInterface">
+        <arguments>
+            <argument name="consumers" xsi:type="array">
+                <item name="pushNotification" xsi:type="array">
+                    <item name="queue" xsi:type="string">mirasvit.event.register</item>
+                    <item name="callback" xsi:type="string">Mirasvit\PushNotification\Api\Service\NotificationServiceInterface::handleEvent</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!--Subscribe to events-->
+    <type name="Mirasvit\Event\Api\Repository\EventRepositoryInterface">
+        <plugin name="mstPushNotificationEventHandler" type="Mirasvit\PushNotification\Plugin\Event\Api\Repository\EventRepository\EventHandlerPlugin"/>
+    </type>
+
+    <!--UI-->
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="pushNotification_subscriber_listing_data_source" xsi:type="string">Mirasvit\PushNotification\Model\ResourceModel\Subscriber\Grid</item>
+                <item name="pushNotification_template_listing_data_source" xsi:type="string">Mirasvit\PushNotification\Model\ResourceModel\Template\Grid</item>
+                <item name="pushNotification_notification_listing_data_source" xsi:type="string">Mirasvit\PushNotification\Model\ResourceModel\Notification\Grid</item>
+                <item name="pushNotification_prompt_listing_data_source" xsi:type="string">Mirasvit\PushNotification\Model\ResourceModel\Prompt\Grid</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="PushNotificationTest" xsi:type="object">Mirasvit\PushNotification\Console\Command\TestCommand</item>
+                <item name="PushNotificationCron" xsi:type="object">Mirasvit\PushNotification\Console\Command\CronCommand</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Mirasvit\Event\Api\Repository\EventRepositoryInterface">
+        <arguments>
+            <argument name="eventKeepers" xsi:type="array">
+                <item name="push_notification" xsi:type="object">Mirasvit\PushNotification\Service\EventKeeper</item>
+            </argument>
+        </arguments>
+    </type>
+
+
+    <type name="Mirasvit\PushNotification\Api\Repository\MessageRepositoryInterface">
+        <plugin name="syncMessage" type="Mirasvit\PushNotification\Plugin\MessageSynchronizationPlugin"/>
+    </type>
+</config>

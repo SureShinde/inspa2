@@ -1,0 +1,22 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php /** @var $block \Magento\Catalog\Block\Product\AbstractProduct */ ?>
+<?= $block->getReviewsSummaryHtml($block->getProduct(), false, true) ?>
+<?php 
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $_product = $objectManager->get('Magento\Framework\Registry')->registry('current_product');//get current product
+    $store_review = $_product->getData('store_review');
+
+    	 if($store_review) {?>
+    	 	<div class="resil_picserty">
+                        <a href="#"><img src="<?php echo $this->getViewFileUrl('images/attributes/Store_review.png'); ?>" alt="Store_review.png" /></a>
+                    </div>
+
+    	<?php } ?>

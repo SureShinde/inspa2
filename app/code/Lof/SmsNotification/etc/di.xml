@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Landofcoder
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Landofcoder.com license that is
+ * available through the world-wide-web at this URL:
+ * http://landofcoder.com/license
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category   Landofcoder
+ * @package    Lof_SmsNotification
+ * @copyright  Copyright (c) 2017 Landofcoder (http://www.landofcoder.com/)
+ * @license    http://www.landofcoder.com/LICENSE-1.0.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="lofsmsnotification_smsdebug_listing_data_source" xsi:type="string">Lof\SmsNotification\Model\ResourceModel\Smsdebug\Grid\Collection</item>
+                <item name="lofsmsnotification_smslog_listing_data_source" xsi:type="string">Lof\SmsNotification\Model\ResourceModel\Smslog\Grid\Collection</item> 
+                <item name="lofsmsnotification_blacklist_listing_data_source" xsi:type="string">Lof\SmsNotification\Model\ResourceModel\Blacklist\Grid\Collection</item>
+                <item name="lofsmsnotification_phone_listing_data_source" xsi:type="string">Lof\SmsNotification\Model\ResourceModel\Phone\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Lof\SmsNotification\Model\ResourceModel\Smsdebug\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">lof_smsnotification_smsdebug</argument>
+            <argument name="eventPrefix" xsi:type="string">lofsmsnotification_smsdebug_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">smsdebug_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Lof\SmsNotification\Model\ResourceModel\Smsdebug</argument>
+        </arguments>
+    </type>  
+    <type name="Lof\SmsNotification\Model\ResourceModel\Smslog\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">lof_smsnotification_smslog</argument>
+            <argument name="eventPrefix" xsi:type="string">lofsmsnotification_smslog_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">smslog_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Lof\SmsNotification\Model\ResourceModel\Smslog</argument>
+        </arguments>
+    </type>
+    <type name="Lof\SmsNotification\Model\ResourceModel\Blacklist\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">lof_smsnotification_blacklist</argument>
+            <argument name="eventPrefix" xsi:type="string">lofsmsnotification_blacklist_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">blacklist_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Lof\SmsNotification\Model\ResourceModel\Blacklist</argument>
+        </arguments>
+    </type>
+     <type name="Lof\SmsNotification\Model\ResourceModel\Phone\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">lof_smsnotification_phone</argument>
+            <argument name="eventPrefix" xsi:type="string">lofsmsnotification_phone_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">phone_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Lof\SmsNotification\Model\ResourceModel\Phone</argument>
+        </arguments>
+    </type>
+    <type name="Lof\SmsNotification\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">smsnotificationlog</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">Lof\SmsNotification\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="SmsNotificationGirdFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType> 
+    <virtualType name="SmsdebugGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Lof\SmsNotification\Model\ResourceModel\Smsdebug\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">SmsNotificationGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="SmslogGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Lof\SmsNotification\Model\ResourceModel\Smslog\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">SmsNotificationGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="BlacklistGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Lof\SmsNotification\Model\ResourceModel\Blacklist\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">SmsNotificationGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="PhoneGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Lof\SmsNotification\Model\ResourceModel\Phone\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">SmsNotificationGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+</config>

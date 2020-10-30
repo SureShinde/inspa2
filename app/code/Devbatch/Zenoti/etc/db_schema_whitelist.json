@@ -1,0 +1,10 @@
+{
+    "customer_address_entity": {
+        "column": {
+            "zenoti_token": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

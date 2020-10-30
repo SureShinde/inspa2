@@ -1,0 +1,64 @@
+<?php
+$helper_data       = $this->helper("Lof\Formbuilder\Helper\Data");
+$field       = $this->getData('field_data');
+$form        = $block->getForm();
+$field_type  = $field['field_type'];
+$label       = $block->filterMessage($field['label']);
+$inlineCss   = isset($field['inline_css'])?$field['inline_css']:'';
+$cid         = $helper_data->getFieldId($field);
+$description ='';
+if(isset($field['field_options']["description"])) {
+	$description = $block->filterMessage($field['field_options']["description"]);
+}
+$helper            = $this->helper("Lof\Formbuilder\Helper\Fields");
+$field_name        = $helper->getFieldPrefix() . $cid . $form->getId();
+$field_id          = $field_name.uniqid();
+$options           = $field['field_options'];
+
+$color_label       = isset($options['color_label'])?'color:'.$options['color_label'].';':'';
+$color_text        = isset($options['color_text'])?'color:'.$options['color_text'].';':'';
+$color_description = isset($options['color_description'])?'color:'.$options['color_description'].';':'';
+$background_color  = isset($options['background_color'])?'background-color:'.$options['background_color'].';':'';
+
+$font_size         = isset($options['font_size'])?'font-size:'.(int)$options['font_size'].'px;':'';
+$font_style        = isset($options['font_style'])?'font-style:'.$options['font_style'].';':'';
+$font_weight       = isset($options['font_weight'])?'font-weight:'.$options['font_weight'].';':'';
+$frame_work_css    = '';
+if(isset($field['frame_work_css'])) {
+	$frame_work_css	  = $field['frame_work_css'];
+}
+
+$label_col = 12;
+if(isset($field['fieldcol']) && $field['fieldcol']) {
+	if((int)$field['fieldcol'] < 12) {
+		$label_col = 12 - (int)$field['fieldcol'];
+	}
+}
+if($frame_work_css =='foundation') {
+	$colunm =  isset($field['fieldcol'])?'medium-'.$field['fieldcol']:'medium-12';
+	$label_column = 'medium-'.$label_col;
+}else{
+	$colunm =  isset($field['fieldcol'])?'col-sm-'.$field['fieldcol']:'col-sm-12';
+	$label_column = 'col-sm-'.$label_col;
+}
+?>
+<div class="subtemplate-wrapper" style="<?php echo $inlineCss ?>">
+	
+	<div class="row">
+		<?php if($label && $label !='') { ?>
+		<div class="field-html-label <?php echo $label_column; ?>">
+			<label for="<?php echo $field_id; ?>"> <?php echo $label; ?></label>
+		</div>
+		<?php } ?>
+		<div class="field-html <?php echo $colunm; ?>" style="<?php echo $background_color; ?>">
+			<div class="sm-html" style="<?php echo $color_text.$font_size.$font_style.$font_weight; ?>">
+				<?php if($description !='') { ?>
+				<div class="form-custom-html">
+					<?php echo $description; ?>
+				</div>
+				<textarea name="<?php echo $field_name; ?>"  id="<?php echo $field_id; ?>" style="display:none;" ><?php echo $description; ?></textarea>
+				<?php } ?>
+			</div>
+		</div>
+	</div>
+</div>

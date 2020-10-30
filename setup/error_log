@@ -1,0 +1,37 @@
+[10-Jun-2019 12:21:38 UTC] PHP Fatal error:  Allowed memory size of 792723456 bytes exhausted (tried to allocate 24576 bytes) in /home/devbatch/public_html/vendor/magento/framework/Session/SessionManager.php on line 136
+[10-Jun-2019 12:21:38 UTC] PHP Fatal error:  Uncaught Exception: Warning: session_start(): Failed to decode session object. Session has been destroyed in /home/devbatch/public_html/vendor/magento/framework/Session/SessionManager.php on line 191 in /home/devbatch/public_html/vendor/magento/framework/App/ErrorHandler.php:61
+Stack trace:
+#0 [internal function]: Magento\Framework\App\ErrorHandler->handler(2, 'session_start()...', '/home/devbatch/...', 191, Array)
+#1 /home/devbatch/public_html/vendor/magento/framework/Session/SessionManager.php(191): session_start()
+#2 /home/devbatch/public_html/generated/code/Magento/Backend/Model/Auth/Session/Interceptor.php(167): Magento\Framework\Session\SessionManager->start()
+#3 /home/devbatch/public_html/vendor/magento/framework/Session/SessionManager.php(127): Magento\Backend\Model\Auth\Session\Interceptor->start()
+#4 /home/devbatch/public_html/vendor/magento/module-backend/Model/Auth/Session.php(100): Magento\Framework\Session\SessionManager->__construct(Object(Magento\Framework\App\Request\Http), Object(Magento\Fra in /home/devbatch/public_html/vendor/magento/framework/App/ErrorHandler.php on line 61
+[10-Jun-2019 12:21:38 UTC] PHP Fatal error:  Uncaught Exception: Warning: session_start(): Failed to decode session object. Session has been destroyed in /home/devbatch/public_html/vendor/magento/framework/Session/SessionManager.php on line 191 in /home/devbatch/public_html/vendor/magento/framework/App/ErrorHandler.php:61
+Stack trace:
+#0 [internal function]: Magento\Framework\App\ErrorHandler->handler(2, 'session_start()...', '/home/devbatch/...', 191, Array)
+#1 /home/devbatch/public_html/vendor/magento/framework/Session/SessionManager.php(191): session_start()
+#2 /home/devbatch/public_html/generated/code/Magento/Backend/Model/Auth/Session/Interceptor.php(167): Magento\Framework\Session\SessionManager->start()
+#3 /home/devbatch/public_html/vendor/magento/framework/Session/SessionManager.php(127): Magento\Backend\Model\Auth\Session\Interceptor->start()
+#4 /home/devbatch/public_html/vendor/magento/module-backend/Model/Auth/Session.php(100): Magento\Framework\Session\SessionManager->__construct(Object(Magento\Framework\App\Request\Http), Object(Magento\Fra in /home/devbatch/public_html/vendor/magento/framework/App/ErrorHandler.php on line 61
+[10-Jun-2019 12:21:38 UTC] PHP Fatal error:  Uncaught Exception: Warning: session_start(): Failed to decode session object. Session has been destroyed in /home/devbatch/public_html/vendor/magento/framework/Session/SessionManager.php on line 191 in /home/devbatch/public_html/vendor/magento/framework/App/ErrorHandler.php:61
+Stack trace:
+#0 [internal function]: Magento\Framework\App\ErrorHandler->handler(2, 'session_start()...', '/home/devbatch/...', 191, Array)
+#1 /home/devbatch/public_html/vendor/magento/framework/Session/SessionManager.php(191): session_start()
+#2 /home/devbatch/public_html/generated/code/Magento/Backend/Model/Auth/Session/Interceptor.php(167): Magento\Framework\Session\SessionManager->start()
+#3 /home/devbatch/public_html/vendor/magento/framework/Session/SessionManager.php(127): Magento\Backend\Model\Auth\Session\Interceptor->start()
+#4 /home/devbatch/public_html/vendor/magento/module-backend/Model/Auth/Session.php(100): Magento\Framework\Session\SessionManager->__construct(Object(Magento\Framework\App\Request\Http), Object(Magento\Fra in /home/devbatch/public_html/vendor/magento/framework/App/ErrorHandler.php on line 61
+[10-Jun-2019 12:24:31 UTC] PHP Fatal error:  Allowed memory size of 792723456 bytes exhausted (tried to allocate 24576 bytes) in /home/devbatch/public_html/vendor/magento/framework/Session/SessionManager.php on line 136
+[10-Jun-2019 12:24:31 UTC] PHP Fatal error:  Uncaught Exception: Warning: session_start(): Failed to decode session object. Session has been destroyed in /home/devbatch/public_html/vendor/magento/framework/Session/SessionManager.php on line 191 in /home/devbatch/public_html/vendor/magento/framework/App/ErrorHandler.php:61
+Stack trace:
+#0 [internal function]: Magento\Framework\App\ErrorHandler->handler(2, 'session_start()...', '/home/devbatch/...', 191, Array)
+#1 /home/devbatch/public_html/vendor/magento/framework/Session/SessionManager.php(191): session_start()
+#2 /home/devbatch/public_html/generated/code/Magento/Backend/Model/Auth/Session/Interceptor.php(167): Magento\Framework\Session\SessionManager->start()
+#3 /home/devbatch/public_html/vendor/magento/framework/Session/SessionManager.php(127): Magento\Backend\Model\Auth\Session\Interceptor->start()
+#4 /home/devbatch/public_html/vendor/magento/module-backend/Model/Auth/Session.php(100): Magento\Framework\Session\SessionManager->__construct(Object(Magento\Framework\App\Request\Http), Object(Magento\Fra in /home/devbatch/public_html/vendor/magento/framework/App/ErrorHandler.php on line 61
+[10-Jun-2019 12:24:31 UTC] PHP Fatal error:  Uncaught Exception: Warning: session_start(): Failed to decode session object. Session has been destroyed in /home/devbatch/public_html/vendor/magento/framework/Session/SessionManager.php on line 191 in /home/devbatch/public_html/vendor/magento/framework/App/ErrorHandler.php:61
+Stack trace:
+#0 [internal function]: Magento\Framework\App\ErrorHandler->handler(2, 'session_start()...', '/home/devbatch/...', 191, Array)
+#1 /home/devbatch/public_html/vendor/magento/framework/Session/SessionManager.php(191): session_start()
+#2 /home/devbatch/public_html/generated/code/Magento/Backend/Model/Auth/Session/Interceptor.php(167): Magento\Framework\Session\SessionManager->start()
+#3 /home/devbatch/public_html/vendor/magento/framework/Session/SessionManager.php(127): Magento\Backend\Model\Auth\Session\Interceptor->start()
+#4 /home/devbatch/public_html/vendor/magento/module-backend/Model/Auth/Session.php(100): Magento\Framework\Session\SessionManager->__construct(Object(Magento\Framework\App\Request\Http), Object(Magento\Fra in /home/devbatch/public_html/vendor/magento/framework/App/ErrorHandler.php on line 61

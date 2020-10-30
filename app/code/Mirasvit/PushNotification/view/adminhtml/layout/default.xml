@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <block name="require.js" class="Mirasvit\PushNotification\Block\Js" template="Mirasvit_PushNotification::manifest.phtml">
+            <block name="additional" class="Magento\Backend\Block\Page\RequireJs" template="Magento_Backend::page/js/require_js.phtml"/>
+        </block>
+
+        <referenceContainer name="content">
+            <block class="Mirasvit\PushNotification\Block\Js" name="push-notification-js" template="js.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

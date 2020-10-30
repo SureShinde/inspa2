@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <lofsmsnotification>
+            <general_settings>
+                <enable_module>1</enable_module>
+            </general_settings>
+            <sms_settings>
+                <type_sms>twilio</type_sms>
+                <sid>ACf112e3c8a52d3a1fd7cdd2a0876a543c</sid>
+                <token>76c47f914908c5390c2c32aa6d63ad58</token>
+                <phone>15005550006</phone>
+                <phone_test>14108675309</phone_test>
+            </sms_settings>
+            <sms_customer>
+                <enable_sms_register_customer>1</enable_sms_register_customer>
+                <message_sms_register_customer>Thank you {{first_name}} {{last_name}} for registering with {{shop_name}} at {{shop_url}}</message_sms_register_customer>
+                <enable_sms_new_order>1</enable_sms_new_order>
+                <message_sms_new_order>Dear {{first_name}} {{last_name}}, thank you for placing order at {{shop_name}} with Order Number {{order_id}} using mobile number {{mobilenumber}} and your total order amount is {{order_total}}.</message_sms_new_order>
+                <enable_new_invoice>1</enable_new_invoice>
+                <message_new_invoice>Invoice for your order {{order_id}} dated {{created_at}} is generated, you can directly print or download it from your registered Email ID.</message_new_invoice>
+                <enable_new_shipment>1</enable_new_shipment>
+                <message_new_shipment>Dear {{first_name}} {{last_name}}, your order {{order_id}} has been shipped today. It will soon arrive at your doorstep.</message_new_shipment>
+                <enable_new_credit_memo>1</enable_new_credit_memo>
+                <message_new_credit_memo>Dear {{first_name}} {{last_name}}, your refund request for order {{order_id}} has been accepted and under process.</message_new_credit_memo>
+            </sms_customer>
+            <sms_admin>
+                <enable_sms_register_customer>1</enable_sms_register_customer>
+                <message_sms_register_customer>Hi admin, a customer has registered to {{shop_name}} from {{shop_url}} with following details:
+                First Name: {{first_name}}
+                Last Name: {{last_name}}
+                Email ID: {{email}}
+                Contact No.:{{mobilenumber}}</message_sms_register_customer>
+                <enable_sms_new_order>1</enable_sms_new_order>
+                <message_sms_new_order>Hi admin, an order is placed at {{shop_name}} with following details: 
+                Customer: {{first_name}} {{last_name}}
+                Email ID: {{email}}
+                Order ID: {{order_id}}</message_sms_new_order>
+                <enable_sms_contact_us>1</enable_sms_contact_us>
+                <message_sms_contact_us>Hi admin, you have got an inquiry from customer with following details:
+                Name: {{name}}
+                Email ID: {{email}}
+                Contact No.:{{mobilenumber}}
+                Message: {{message}}</message_sms_contact_us>
+            </sms_admin>
+            <sms_opt>
+                <otp_format>num</otp_format>
+                <otp_message>Your code active here: {{var otp_code}}</otp_message>
+                <opt_length>6</opt_length>
+                <opt_resend>30</opt_resend>
+            </sms_opt>
+        </lofsmsnotification>
+    </default>
+</config>

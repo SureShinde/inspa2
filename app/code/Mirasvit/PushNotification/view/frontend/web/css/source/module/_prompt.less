@@ -1,0 +1,70 @@
+& when (@media-common = true) {
+  .push-notification__prompt {
+    position: fixed;
+    top: 7px;
+    background: #ffffff;
+    border: 1px solid #bbbbbb;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
+    z-index: 10000;
+
+    &:before {
+      border: 6px solid;
+      border-color: transparent transparent #ffffff transparent;
+      z-index: 99;
+      content: '';
+      display: block;
+      position: absolute;
+      top: -12px;
+      left: 21px;
+    }
+    &:after {
+      border: 7px solid;
+      border-color: transparent transparent #bbbbbb transparent;
+      z-index: 98;
+      content: '';
+      display: block;
+      position: absolute;
+      top: -14px;
+      left: 20px;
+    }
+
+    .headline {
+      display: block;
+      font-size: 14px;
+      padding-bottom: 1rem;
+      font-weight: bold;
+    }
+
+    .body {
+      padding-bottom: 1.5rem;
+    }
+
+    .actions {
+      .reject {
+        margin-left: 1rem;
+        color: #7e807e;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+//
+//    Desktop
+//--------------------------------------
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+  .push-notification__prompt {
+    left: 200px;
+  }
+}
+
+//
+//    Mobile
+//--------------------------------------
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+  .push-notification__prompt {
+    left: 0;
+    max-width: 100%;
+  }
+}

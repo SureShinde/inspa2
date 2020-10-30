@@ -1,0 +1,164 @@
+<?php
+/**
+ * Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.mageplaza.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_LayeredNavigation
+ * @copyright   Copyright (c) 2017 Mageplaza (http://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
+ */
+?>
+<?php
+/** @type \Mageplaza\LayeredNavigation\Model\Layer\Filter\Attribute $filter */
+$filter = $this->getFilter();
+$attributeCode = $filter->getRequestVar();
+
+/** @type \Mageplaza\Layerednavigation\Model\Layer\Filter $filterModel */
+$filterModel = $this->helper('\Mageplaza\LayeredNavigation\Helper\Data')->getFilterModel();
+?>
+<ol class="items">
+    <?php /** @type  $filterItem */ foreach ($filterItems as $filterItem): ?>
+    <li class="item">
+        <?php if($filterModel->getIsSliderTypes($filter)): ?>
+            <div id="ln_slider_container_<?php echo $attributeCode ?>" class="ln_slider_container">
+                <div id="ln_slider_<?php echo $attributeCode ?>"></div>
+                <div id="ln_slider_text_<?php echo $attributeCode ?>"></div>
+            </div>
+            <?php else: ?>
+
+                <?php if ($filterItem->getCount() > 0): ?>
+                    <a href="<?php echo $block->escapeUrl($filterModel->getItemUrl($filterItem)) ?>">
+                        <input type="<?php echo $filterModel->isMultiple($filter) ? 'checkbox' : 'radio' ?>" <?php echo $filterModel->isSelected($filterItem) ? 'checked="checked"' : ''  ?> />
+                        <!-- Add By Muhib -->
+                        <?php $label = $filterItem->getLabel(); ?>
+                        <?php if (strpos($label, '#') !== false): ?>
+                            <?php  list($name, $description) = explode('#', $label) ?>
+                            <?php print_r($name) ?>
+                            <?php else:?>
+                                <?= /* @escapeNotVerified */ $filterItem->getLabel() ?>
+                            <?php endif; ?>
+
+                            <!-- End By Muhib -->
+
+                            <?php if ($filterModel->isShowCounter($filter)): ?>
+                                <span class="count"><?php echo $filterItem->getCount()?><span class="filter-count-label"><?php echo ($filterItem->getCount() == 1) ? 'item' : 'items'; ?></span></span>
+                            <?php endif; ?>
+                        </a>
+                         <!-- Add By Muhib -->
+                        <?php $label = $filterItem->getLabel(); ?>
+                        <?php if (strpos($label, '#') !== false): ?>
+
+                            <?php  $str = explode('#', $label) ?>
+                            <div class="tooltip wrapper">
+                             <span class="fa fa-info-circle" data-toggle="popover" data-content="<a href='#' class='close' data-dismiss='alert'>&times;</a>
+
+                                <?php if (count($str) == 3): ?>
+                                <?php if ($str[1] && $str[2]): ?>
+                                <a href='<?php print_r($str[2]) ?>' target='blank'><?php print_r($str[1]) ?></a>" data-html="true">
+                                
+                                <?php endif; ?> 
+                                <?php else:?>
+                                <!-- If description is included -->
+                                <?php if ($str[1]): ?>
+                                <p><?php print_r($str[1]) ?></p>
+                                <?php endif; ?>
+                                <!-- if read more and link not present -->
+                                <?php if (count($str) > 2): ?>
+                                <?php if ($str[2] && $str[3]): ?>
+                                <a href='<?php print_r($str[3]) ?>' target='blank'><?php print_r($str[2]) ?></a>" data-html="true">
+                                <?php endif; ?>
+                                <?php else:?>
+                                    " data-html="true">
+                                <?php endif; ?>
+
+                                <?php endif; ?>
+                             </span>
+                         </div>
+                     <?php endif; ?>
+
+                     <!-- End By Muhib -->
+                     <?php else: ?>
+
+
+                       <a href="javascript:void(0)">
+                        <input type="<?php echo $filterModel->isMultiple($filter) ? 'checkbox' : 'radio' ?>" disabled="disabled" />
+                        
+                        <!-- Add By Muhib -->
+                        <?php $label = $filterItem->getLabel(); ?>
+                        <?php if (strpos($label, '#') !== false): ?>
+                            <?php  list($name, $description) = explode('#', $label) ?>
+                            <?php print_r($name) ?>
+
+                            <?php else:?>
+                                <?= /* @escapeNotVerified */ $filterItem->getLabel() ?>
+                            <?php endif; ?>
+
+                            <!-- End By Muhib -->
+                            <?php if ($filterModel->isShowCounter($filter)): ?>
+                                <span class="count"><?php echo $filterItem->getCount()?><span class="filter-count-label"><?php echo ($filterItem->getCount() == 1) ? 'item' : 'items'; ?></span></span>
+                            <?php endif; ?>
+                        </a>
+                         <!-- Add By Muhib -->
+                        <?php $label = $filterItem->getLabel(); ?>
+                        <?php if (strpos($label, '#') !== false): ?>
+
+                            <?php  $str = explode('#', $label) ?>
+                            <div class="tooltip wrapper">
+                             <span class="fa fa-info-circle" data-toggle="popover" data-content="<a href='#' class='close' data-dismiss='alert'>&times;</a>
+
+                                <?php if (count($str) == 3): ?>
+                                <?php if ($str[1] && $str[2]): ?>
+                                <a href='<?php print_r($str[2]) ?>' target='blank'><?php print_r($str[1]) ?></a>" data-html="true">
+                                
+                                <?php endif; ?> 
+                                <?php else:?>
+                                <!-- If description is included -->
+                                <?php if ($str[1]): ?>
+                                <p><?php print_r($str[1]) ?></p>
+                                <?php endif; ?>
+                                <!-- if read more and link not present -->
+                                <?php if (count($str) > 2): ?>
+                                <?php if ($str[2] && $str[3]): ?>
+                                <a href='<?php print_r($str[3]) ?>' target='blank'><?php print_r($str[2]) ?></a>" data-html="true">
+                                <?php endif; ?>
+                                <?php else:?>
+                                    " data-html="true">
+                                <?php endif; ?>
+
+                                <?php endif; ?>
+                             </span>
+                         </div>
+                     <?php endif; ?>
+
+                     <!-- End By Muhib -->
+
+                 <?php endif; ?> 
+
+
+             <?php endif; ?>
+         </li>
+     <?php endforeach ?>
+ </ol>
+ <script type="text/javascript">
+    require([
+        'jquery'        
+        ], function ($) {
+            $('.fa-info-circle').popover({
+                container: 'body'
+            });
+            $(document).on("click", ".popover .close" , function(){
+                $(this).parents(".popover").popover('hide');
+            });
+        });
+    </script>

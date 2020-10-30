@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+	<group id="default">
+		<job instance="Devbatch\UpdateQuantity\Cron\UpdateItem" method="execute" name="devbatch_updatequantity_updateitem">
+			<schedule>1 12 * * *</schedule>
+		</job>
+		<job instance="Devbatch\UpdateQuantity\Cron\UpdateProduct" method="execute" name="devbatch_updateproduct_updateitem">
+			<schedule>1 12 * * *</schedule>
+		</job>
+	</group>
+</config>

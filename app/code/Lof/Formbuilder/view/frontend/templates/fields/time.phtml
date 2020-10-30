@@ -1,0 +1,96 @@
+<?php
+$helper           = $this->helper("Lof\Formbuilder\Helper\Fields");
+$dataHelper 	  = $this->helper("Lof\Formbuilder\Helper\Data");
+$form             = $block->getForm();
+$form_data        = $this->getData('form_data');
+$field            = $this->getData('field_data');
+$field_type       = $field['field_type'];
+$label            = $block->filterMessage($field['label']);
+$options          = $field['field_options'];
+$required         = $field['required'];
+$cid              = $dataHelper->getFieldId($field);
+$field_name       = $helper->getFieldPrefix() . $cid . $form->getId();
+$field_id          = $field_name.uniqid();
+$available_fields = $helper->getAvailableFields();
+$html             = '';
+$field_validate   = isset($available_fields[$field_type])?$available_fields[$field_type]:'';
+$validates        = $field_validate;
+$field_help       = isset($options['description'])?$block->filterMessage($options['description']):'';
+$inlineCss        = isset($field['inline_css'])?$field['inline_css']:'';
+if($field_validate && is_array($field_validate)) {
+	$validates = implode(" ", $field_validate);
+}
+$id = $cid . time();
+
+$color_label 	  = isset($options['color_label'])?'color:'.$options['color_label'].';':'';
+$color_text 	  = isset($options['color_text'])?'color:'.$options['color_text'].';':'';
+$color_description= isset($options['color_description'])?'color:'.$options['color_description'].';':'';
+$background_color = isset($options['background_color'])?'background-color:'.$options['background_color'].';':'';
+
+$font_size 		  = isset($options['font_size'])?'font-size:'.(int)$options['font_size'].'px;':'';
+$font_style 	  = isset($options['font_style'])?'font-style:'.$options['font_style'].';':'';
+$font_weight	  = isset($options['font_weight'])?'font-weight:'.$options['font_weight'].';':'';
+
+?>
+<div class="subtemplate-wrapper" style="<?php echo $inlineCss ?>">
+	<label for="<?php echo $field_id; ?>" style="<?php echo $font_size.$font_style.$font_weight.$color_label; ?>" class="<?php echo (1==$required)?'required':''; ?>"><?php echo __($label); ?><?php echo (1==$required)?'<em>*</em>':'';?></label>
+	<div class="input-box">
+		<div class="input-line" style="<?php echo $color_text; ?>>
+			<span class="hours">
+				<select name="<?php echo $field_name.'_hours'; ?>" id="<?php echo $field_id.'_hours'; ?>" class="<?php echo (1==$required)?'required-entry':''; ?> validate-zero-or-greater time-<?php echo $id ?>" >
+					<?php
+					for($i=0; $i<24; $i++) {
+						$k = $i;
+						if($i<10) {
+							$k = '0'.$i;
+						} ?>
+						<option value="<?php echo $k; ?>"><?php echo $k; ?></option>
+						<?php
+					}
+					?>
+				</select>
+				<label><?php echo __("HH"); ?></label>
+			</span>
+			<span class="above-line">:</span>
+			<span class="minutes">
+				<select name="<?php echo $field_name.'_minutes'; ?>" id="<?php echo $field_id.'_minutes'; ?>" class="<?php echo (1==$required)?'required-entry':''; ?> validate-zero-or-greater time-<?php echo $id ?>" >
+					<?php
+					for($i=0; $i<60; $i++) {
+						$k = $i;
+						if($i<10) {
+							$k = '0'.$i;
+						} ?>
+						<option value="<?php echo $k; ?>"><?php echo $k ?></option>
+						<?php }
+						?>
+
+					</select>
+					<label><?php echo __("MM"); ?></label>
+				</span>
+				<span class="above-line">:</span>
+				<span class="seconds">
+					<select name="<?php echo $field_name.'_seconds'; ?>" id="<?php echo $field_id.'_seconds'; ?>" class="<?php echo (1==$required)?'required-entry':''; ?> validate-zero-or-greater time-<?php echo $id ?>" >
+						<?php
+						for($i=0; $i<60; $i++) {
+							$k = $i;
+							if($i<10) {
+								$k = '0'.$i;
+							} ?>
+							<option value="<?php echo $k; ?>"><?php echo $k; ?></option>
+							<?php }
+							?>
+						</select>
+						<label><?php echo __("SS"); ?></label>
+					</span>
+					<span class="am_pm">
+						<select name="<?php echo $field_name.'_am_pm'; ?>" id="<?php echo $field_id.'_am_pm'; ?>" class="time-<?php echo $id ?>" >
+							<option value="AM"><?php echo __("AM"); ?></option>
+							<option value="PM"><?php echo __("PM"); ?></option>
+						</select>
+					</span>
+				</div>
+				<?php if($field_help) { ?>
+					<span class="help-block" style="<?php echo $color_description; ?>"><?php echo $field_help; ?></span>
+					<?php } ?>
+				</div>
+			</div>

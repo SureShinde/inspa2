@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <push_notification>
+            <authorization>
+                <google_api_key>AAAApLHDNXE:APA91bFKRfOOjt-JcqvsBpOAuvE7sbHkTnzuHoWNWrTE4TeTD0kgPE-G4Jw57xIw5UY6j0rhHzKWfzEIiuoGVWoq9jB22145bQOyolnS6f4tP2OIu7NUwJKWcGR1O3tNObn2dddPOIOV</google_api_key>
+                <gcm_sender_id>707356996977</gcm_sender_id>
+            </authorization>
+        </push_notification>
+    </default>
+</config>
